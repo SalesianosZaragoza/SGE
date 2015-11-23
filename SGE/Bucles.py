@@ -19,6 +19,11 @@ step = 10
 
 for i in range(indice, 100, step):
     print i
+
+a = ['bruja', 'xyzzy']
+for i in a[0:1]:
+    print i
+
 '''
 tuplasSi = ('s', 'S', 'si', 'Si', 'SI')
 tuplasNo = ('n', 'no', 'No', 'NO');
@@ -31,4 +36,3 @@ if ok in tuplasNo:
 '''
 while True:
     pass
-'''

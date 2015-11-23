@@ -35,7 +35,7 @@ a = ['pan', 'huevos', 100, 1234]
 a[0:2] = []
 print a
 # insertar algunos
-a[1:1] = ['bruja', 'xyzzy']
+a[1] = ['bruja', 'xyzzy']
 print a
 # Reemplazar algunos elementos:
 

@@ -1,27 +1,45 @@
+def sayHola():
+    print "Decir hola"
+
 class ClassMother:
-    pass
+    def sayMama(self):
+        print "Mama"
+    funcion = sayMama
+    def anotherFunction(self, mediterranea):
+        print "comida de Mama"
+    
 class ClassFather:
-    pass
+    def sayPapa(self):
+        print "papa"
+    def anotherFunction(self, mediterranea):
+        print "comida de Papa"
 
 
 class Son(ClassMother, ClassFather):
     pass;
 
 myson = Son()
+myson.sayPapa()
+myson.sayMama()
+myson.anotherFunction("comida")
+myson.funcion()
+
 
 class Eggs(Son):
-    cookingStyle = "mediterranea"
+    _cookingStyle = "mediterranea"
         
     def __init__(self, *cookingStyle):
-        self.cookingStyle = cookingStyle
+        self._cookingStyle = cookingStyle
         # Son.__init__(self)
         # initialization (constructor) code goes here
     def anotherFunction(self, mediterranea):
         if mediterranea:
-            print self.cookingStyle
+            print self._cookingStyle
         else:
-            self.cookingStyle = 'peruana'
-            print self.cookingStyle
+            self._cookingStyle = 'peruana'
+            print self._cookingStyle
 
-theseEggsInMyProgram = Eggs()
+theseEggsInMyProgram = Eggs("hamburguesa", "param2")
+theseEggsInMyProgram._
 theseEggsInMyProgram.anotherFunction(True)
+
