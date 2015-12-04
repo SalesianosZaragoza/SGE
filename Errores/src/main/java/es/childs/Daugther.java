@@ -6,11 +6,11 @@ public class Daugther implements Children {
 
 	@Override
 	public void walk() {
-		try {
-			throw new WalkException();
-		} catch (WalkException e) {
-			throw new RuntimeException(e);
-		}
+			try {
+				throw new WalkException();
+			} catch (WalkException e) {
+				throw new RuntimeException(e);
+			}
 	}
 
 }
