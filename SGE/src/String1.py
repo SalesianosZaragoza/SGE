@@ -5,6 +5,7 @@
 # instead of the actual count.
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
+
 def donuts(count):
     pass
 
@@ -14,6 +15,7 @@ def donuts(count):
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
+
 def both_ends(s):
     pass
 
@@ -38,5 +40,6 @@ def fix_start(s):
 #   'mix', pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
+
 def mix_up(a, b):
     pass

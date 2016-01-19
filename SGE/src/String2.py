@@ -5,6 +5,7 @@
 # add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
+
 def verbing(s):
     pass
 
@@ -17,6 +18,7 @@ def verbing(s):
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
+
 def not_bad(s):
     pass
 
@@ -28,5 +30,6 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
+
 def front_back(a, b):
     pass

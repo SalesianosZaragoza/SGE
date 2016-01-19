@@ -2,6 +2,7 @@
 
 
 class FunWithSnow:
+    
     def isPalindrome(self, str):
         return
     
