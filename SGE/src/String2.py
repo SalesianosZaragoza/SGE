@@ -6,8 +6,21 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 
+#PREGUNTA----------------------- reemplazar o 
+
 def verbing(s):
-    pass
+    
+    if len(s) >= 3:
+        
+        if s[len(s)-3:] != 'ing':
+            
+            s = s + 'ing' 
+    
+        else:
+            
+            s = s[:len(s)-3] + 'ly'
+    
+    return s
 
 
 # E. not_bad
@@ -20,7 +33,9 @@ def verbing(s):
 # This dinner is good!
 
 def not_bad(s):
-    pass
+    
+    return s.replace(s[s.find('not'): s.find('bad')+3],'good')
+    
 
 
 # F. front_back
@@ -32,4 +47,9 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 
 def front_back(a, b):
-    pass
+    
+    return   a[:((len(a)%2) + (len(a)/2))] + b[:((len(b)%2) + (len(b)/2))] + a[((len(a)%2) + (len(a)/2)):] + b[((len(b)%2) + (len(b)/2)):]
+   
+    
+
+print front_back('hola','adios')

@@ -22,6 +22,8 @@ def remove_adjacent(nums):
 # Ideally, the solution should work in "linear" time, making a single
 # pass of both lists.
 
+#####PREGUNTAR--------------------------------------
+
 def linear_merge(list1, list2):
     
     return sorted(list1 + list2)
