@@ -6,11 +6,21 @@
 def remove_adjacent(nums):
     
     
-    for index,num in enumerate(nums):
+    if len(nums) > 1:
         
-        if index > 0 and num == nums[index-1]:
+        index = 1
         
-            del nums[index]
+        while(index < len(nums)):
+            
+            if nums[index] == nums[index-1]:
+            
+                del nums[index]
+                
+                index-=1
+                    
+            index+=1        
+
+    print "Resultado" ,nums    
         
     return nums
     
@@ -22,16 +32,11 @@ def remove_adjacent(nums):
 # Ideally, the solution should work in "linear" time, making a single
 # pass of both lists.
 
-#####PREGUNTAR--------------------------------------
 
 def linear_merge(list1, list2):
+    
+    print sorted(list1 + list2)
     
     return sorted(list1 + list2)
     
     
-
-lista1 = [1, 21, 33, 3]
-lista2 = [4, 7, 0, 34]
-
-
-print linear_merge(lista1 ,lista2)

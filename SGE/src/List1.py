@@ -29,13 +29,18 @@ def front_x(words):
     
     list = []
     
-    for index,word in enumerate(words):
-        
-        if word[0] == 'x':
-            
-            list.append(word)
-            del words[index]
+    index = 0
     
+    while(index < len(words)):
+        
+        if words[index][0] == 'x':
+            
+            list.append(words[index])
+            del words[index]
+            index -= 1
+        
+        index += 1
+            
     words.sort()
     list.sort()
     
@@ -67,8 +72,5 @@ def sort_last(tuples):
         tuples[index],tuples[min]  = tuples[min],tuples[index]
         
     return tuples
-
-
-
 
 

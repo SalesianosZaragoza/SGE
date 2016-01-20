@@ -30,7 +30,7 @@ def both_ends(s):
     
     result = ''
     
-    if len(s) > 4:
+    if len(s) > 2:
         
         result = s[0:2] + s[len(s)-2:]
         
@@ -62,8 +62,7 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 
 def mix_up(a, b):
-    
-    return a[0:1] + b[1] + a[2:] + ' ' + b[0:1] + a[1] + b[2:]
+        
+    return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
     
 
-print mix_up('un', 'dod')
