@@ -8,8 +8,8 @@ clase = FunWithSnow()
 class MyTest(unittest.TestCase):
     
     def testIsPalindrome(self):
-        self.assertTrue(clase.isPalindrome("A Mercedes ése de crema"))
-        self.assertTrue(clase.isPalindrome("Ana, la tacaña catalana"))
+        self.assertTrue(clase.isPalindrome("A Mercedes Ã©se de crema"))
+        self.assertTrue(clase.isPalindrome("Ana, la tacaÃ±a catalana"))
         self.assertFalse(clase.isPalindrome("dado"))
         self.assertFalse(clase.isPalindrome("ddia"))
     

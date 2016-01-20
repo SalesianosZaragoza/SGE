@@ -24,8 +24,6 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 
-#####PREGUNTAR-------------------------------------- no seria menor que 4?
-
 def both_ends(s):
     
     result = ''
