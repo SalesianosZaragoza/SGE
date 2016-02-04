@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: iso-8859-1 -*-
+# -*- coding: utf-8 -*-
 import unittest
 from src.Christmas import FunWithSnow
 
@@ -14,7 +14,10 @@ class MyTest(unittest.TestCase):
         self.assertFalse(clase.isPalindrome("ddia"))
     
     def testReverseWordsOnAString(self):
-        self.assertEqual(clase.reverse(['esta', 'casa', 'es', 'un', 'ruina']), "atse asac se nu aniur")
+        self.assertEqual(clase.reverseString("esta casa es un ruina", "atse asac se nu aniur")
+
+    def testReverseWordsOnAList(self):
+        self.assertEqual(clase.reverseList(['esta', 'casa', 'es', 'un', 'ruina']), "atse asac se nu aniur")
         
         
 def main():
