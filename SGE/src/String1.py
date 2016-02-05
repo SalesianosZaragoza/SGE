@@ -9,7 +9,7 @@
 
 def donuts(count):
     if count < 10:
-        return 'Number of donuts: ' + count
+        return 'Number of donuts: ' + str(count)
     else:
         return 'Number of donuts: many'
     pass
@@ -42,9 +42,13 @@ def both_ends(s):
 
 
 def fix_start(s):
-    for i, character in enumerate(s):
-        if i != 0 & character == s[0]:
-            s[i] = '*'
+    s2 = list(s)
+
+    for i, character in enumerate(s2):
+        if i != 0 and character == s2[0]:
+            s2[i] = '*'
+
+    return ''.join(s2)
     pass
 
 
@@ -55,5 +59,11 @@ def fix_start(s):
 #   'mix', pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
+
+
 def mix_up(a, b):
+    if len(b) < 3:
+        return '' + b[0:2] + a[2:len(a)]
+    else:
+        return '' + b[0:2] + a[2:len(a)] + ' ' + a[0:2] + b[2:len(b)]
     pass
