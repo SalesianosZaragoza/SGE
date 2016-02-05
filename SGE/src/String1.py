@@ -9,9 +9,9 @@
 
 def donuts(count):
     if count < 10:
-        return "Number of donuts: " + count
+        return 'Number of donuts: ' + count
     else:
-        return "Number of donuts: many"
+        return 'Number of donuts: many'
     pass
 
 
@@ -24,7 +24,7 @@ def donuts(count):
 
 def both_ends(s):
     if len(s) < 2:
-        return ""
+        return ''
     else:
         return s[0] + s[1] + s[len(s) - 2] + s[len(s) - 1]
     pass
@@ -39,7 +39,12 @@ def both_ends(s):
 # Assume that the string is length 1 or more.
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
+
+
 def fix_start(s):
+    for i, character in enumerate(s):
+        if i != 0 & character == s[0]:
+            s[i] = '*'
     pass
 
 
