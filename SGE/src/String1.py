@@ -5,7 +5,13 @@
 # instead of the actual count.
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
+
+
 def donuts(count):
+    if count < 10:
+        return "Number of donuts: " + count
+    else:
+        return "Number of donuts: many"
     pass
 
 
@@ -14,7 +20,10 @@ def donuts(count):
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
+
+
 def both_ends(s):
+    
     pass
 
 
