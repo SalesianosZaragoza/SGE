@@ -6,4 +6,4 @@ python:
 env:
   - TEST_DIR=SGE
 
-script: cd $TEST_DIR && python -m unittest tests.List1Test && python -m unittest tests.List2Test && python -m unittest tests.String1Test && python -m unittest tests.String2Test && python -m unittest tests.ChrismasTest
+script: cd $TEST_DIR && python -m unittest tests.List1Test && python -m unittest tests.List2Test && python -m unittest tests.String1Test && python -m unittest tests.String2Test && python -m unittest tests.ChristmasTest
