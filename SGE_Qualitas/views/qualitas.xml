@@ -1,0 +1,242 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="empresa_list_action">
+            <field name = "name">Empresa</field>
+            <field name = "res_model">res.partner</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name = "help" type= "html">
+                <tree string="Listado Empresas"/>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="empresa_form_view">
+            <field name="name">partner.form</field>
+            <field name="model">res.partner</field> 
+            <field name="inherit_id" ref="base.view_partner_form"/>   
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="empresa">
+                        <group>
+                            <field name="direccion"/>
+                            <field name="codigo_postal"/>
+                            <field name="alumnos_ids"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        
+        
+        <record model="ir.actions.act_window" id="colegio_list_action">
+            <field name = "name">Colegio</field>
+            <field name = "res_model">qualitas.colegio</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Crea el primer pokemon</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="colegio_form_view">
+            <field name="name">colegio.form</field>
+            <field name="model">qualitas.colegio</field>    
+            <field name="arch" type="xml">
+                <form string = 'Colegio Form'>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="alumnos_ids"/>
+                            <field name="n_alumnos"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='colegio_tree_view'>
+            <field name="name">colegio.tree</field>
+            <field name="model">qualitas.colegio</field>
+            <field name="arch" type="xml">
+                <tree string="Colegio Tree">
+                    <field name="name"/>
+                    <field name="n_alumnos"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+        <record model="ir.actions.act_window" id="alumno_list_action">
+            <field name = "name">Alumno</field>
+            <field name = "res_model">qualitas.alumno</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_mis_alumnos': 1}"/>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Crea el primer Alumno</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="alumno_form_view">
+            <field name="name">alumno.form</field>
+            <field name="model">qualitas.alumno</field>    
+            <field name="arch" type="xml">
+                <form string = 'Alumno Form'>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="fecha_nacimiento"/>
+                            <field name="can_do_fct"/>
+                            <field name="edad"/>
+                            <field name="examenes_suspendidos"/>
+                            <field name="colegio_id"/>
+                            <field name="empresa_id"/>
+                            <field name="examenes_ids"/>
+                            <field name="ausencias_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='alumno_tree_view'>
+            <field name="name">alumno.tree</field>
+            <field name="model">qualitas.alumno</field>
+            <field name="arch" type="xml">
+                <tree string="alumno Tree">
+                    <field name="name"/>
+                    <field name="examenes_suspendidos" widget="progressbar"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="alumno_search_view">
+            <field name="name">alumno.search</field>
+            <field name="model">qualitas.alumno</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <filter name="mi_filtro" string="Puden Hacer fct" domain="[('can_do_fct', '=', True)]"/>
+                    <group string="Group By">
+                        <filter name="por_alumno" string="Alumno" context="{'group_by': 'alumno_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="examen_list_action">
+            <field name = "name">Examen</field>
+            <field name = "res_model">qualitas.examen</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form,calendar</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Crea el primer Examen</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="examen_form_view">
+            <field name="name">examen.form</field>
+            <field name="model">qualitas.examen</field>    
+            <field name="arch" type="xml">
+                <form string = 'Examen Form'>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="fecha_realizacion"/>
+                            <field name="hora"/>
+                            <field name="asignatura"/>
+                            <field name="nota"/>
+                            <field name="examenes_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='examen_tree_view'>
+            <field name="name">examen.tree</field>
+            <field name="model">qualitas.examen</field>
+            <field name="arch" type="xml">
+                <tree string="Examen Tree">
+                    <field name="name"/>
+                    <field name="asignatura"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="examen_calendar_view">
+            <field name="name">examen.calendar</field>
+            <field name="model">qualitas.examen</field>
+            <field name="arch" type="xml">
+                <calendar string="Examen Calendar" date_start="fecha_realizacion" color="name">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="ausencia_list_action">
+            <field name = "name">Ausencia</field>
+            <field name = "res_model">qualitas.ausencia</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form,gantt</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Crea el primer Ausencia</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="ausencia_form_view">
+            <field name="name">ausencia.form</field>
+            <field name="model">qualitas.ausencia</field>    
+            <field name="arch" type="xml">
+                <form string = 'Ausencia Form'>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="fecha"/>
+                            <field name="horas"/>
+                            <field name="alumno_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='ausencia_tree_view'>
+            <field name="name">ausencia.tree</field>
+            <field name="model">qualitas.ausencia</field>
+            <field name="arch" type="xml">
+                <tree string="Ausencia Tree">
+                    <field name="name"/>
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="ausencia_gantt_view">
+            <field name="name">ausencia.gantt</field>
+            <field name="model">qualitas.ausencia</field>
+            <field name="arch" type="xml">
+                <gantt string="Ausencia Gantt" color="name"
+                       date_start="fecha" date_delay="horas"
+                       default_group_by='alumno_id'>
+                    <field name="name"/>
+                </gantt>
+            </field>
+        </record>
+        
+        
+        <menuitem id="qualitas_menu" name="Qualitas"/>
+        
+        <menuitem id="Colegios_menu" name="Qualitas" parent = "qualitas_menu"/>
+        
+        <menuitem id="colegio_menu" name="Colegio" parent = "Colegios_menu" action = "colegio_list_action"/>
+    
+        <menuitem id="empresa_menu" name="Empresa" parent = "Colegios_menu" action = "empresa_list_action"/>
+        
+        <menuitem id="alumno_menu" name="Alumno" parent = "Colegios_menu" action = "alumno_list_action"/>
+        
+        <menuitem id="examen_menu" name="Examen" parent = "Colegios_menu" action = "examen_list_action"/>
+        
+        <menuitem id="ausencia_menu" name="Ausencia" parent = "Colegios_menu" action = "ausencia_list_action"/>
+    </data>
+</openerp>
