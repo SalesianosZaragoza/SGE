@@ -29,7 +29,7 @@ tuplasSi = ('s', 'S', 'si', 'Si', 'SI')
 tuplasNo = ('n', 'no', 'No', 'NO');
 tuplasPuede = ('puede', 'posiblemente', 'quizas');
 ok = 'no';
-if ok in tuplasSi or ok in tuplasPuede):
+if (ok in tuplasSi or ok in tuplasPuede):
     print "Aqui no se encuentra"
 if ok in tuplasNo:
     print "Aqui se ha encontrado"

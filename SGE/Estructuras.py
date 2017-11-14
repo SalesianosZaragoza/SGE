@@ -6,6 +6,8 @@ print singleItemTuple
 
 print singleItemTuple[0]
 '''
+
+
 #print singleItemTuple[1]
 '''
 mytuple1 = 12, 89, 'a'
@@ -17,12 +19,11 @@ print mytuple3 * 5
 
 # trabajando con listas
 a = ['pan', 'huevos', 100, 1234]
-# print len (a)
-# print a[0:-2]
-#print a[:2]
-#print a[:2] + ['carne', 2 * 2]
+#print len (a)
+#print a[0:-1]
+print a[:2]
+print a[:2] + ['carne', 2 * 2]
 #print 2 * (a[:2] + ['Boo!'])
-
 # A  diferencia de las cadenas de texto,
 # que son inmutables, es posible cambiar
 # un elemento individual de una lista:
@@ -44,3 +45,4 @@ a = [-1, 1, 66.25, 333, 333, 1234.5]
 print a
 del a[0]
 print a
+
