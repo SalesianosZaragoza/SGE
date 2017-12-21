@@ -10,8 +10,6 @@ def sayAdios(funcion):
 decirhola = sayHola
 decirHolaYAdios = sayAdios
 decirHolaYAdios(decirhola)
-
-
 class Abuelo:
     def sayName(self):
         print("soy el abuelo")

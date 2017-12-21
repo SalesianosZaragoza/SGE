@@ -1,5 +1,5 @@
-<openerp>
-    <data>
+<odoo>
+    
         <record model="ir.actions.act_window" id="empresa_list_action">
             <field name = "name">Empresa</field>
             <field name = "res_model">res.partner</field>
@@ -211,7 +211,7 @@
                 </tree>
             </field>
         </record>
-        
+        <!--
         <record model="ir.ui.view" id="ausencia_gantt_view">
             <field name="name">ausencia.gantt</field>
             <field name="model">qualitas.ausencia</field>
@@ -223,6 +223,7 @@
                 </gantt>
             </field>
         </record>
+        -->
         
         
         <menuitem id="qualitas_menu" name="Qualitas"/>
@@ -238,5 +239,6 @@
         <menuitem id="examen_menu" name="Examen" parent = "Colegios_menu" action = "examen_list_action"/>
         
         <menuitem id="ausencia_menu" name="Ausencia" parent = "Colegios_menu" action = "ausencia_list_action"/>
-    </data>
-</openerp>
+    
+    
+</odoo>
