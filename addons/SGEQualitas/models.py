@@ -42,13 +42,16 @@ class alumno(models.Model):
     
     @api.depends('examenes_ids', 'examenes_suspendidos')
     def _calc_exam_sus(self):
+        r.examenes_suspendidos = 0
         for r in self:
-            r.examenes_suspendidos = len(r.examenes_ids)
+            for exam in r.examenes_ids
+                if(exam.nota < 4):
+                    r.examenes_suspendidos += 1
     
     @api.depends('can_do_fct', 'examenes_suspendidos')
     def _can_do_fct(self):
         for r in self:
-            if r.examenes_suspendidos > 90:
+            if r.examenes_suspendidos < 2:
                 r.can_do_fct = True
             else:
                 r.can_do_fct = False
@@ -79,7 +82,7 @@ class examen(models.Model):
     asignatura = fields.Char()
     nota = fields.Integer()
     examenes_ids = fields.Many2many(string= "Alumnos" , comodel_name = 'qualitas.alumno', relation = 'rel_examen_alumno', column1='examen', column2='alumno')
-    asignatura = fields.Selection([('asig1','Asig1'), ('asig2','Asig2')], 'Asig', default='asig1')
+    asignatura = fields.Selection([('asig1','Entornos'), ('asig2','Sist Gest')], 'Asig', default='asig1')
     
 class ausencia(models.Model):
     _name = 'qualitas.ausencia'
