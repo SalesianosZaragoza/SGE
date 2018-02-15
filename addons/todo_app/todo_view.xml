@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
         <!-- add a record to the model ir.ui.view with the identifier view_form_todo_task -->
         <record id="view_form_todo_task" model="ir.ui.view">
             <field name="name">To-do Task Form</field>
@@ -61,5 +60,4 @@ defined before. The sequence lets us set the order of the
 menu options. -->
         <menuitem action="action_todo_task" id="menu_todo_task"
             name="To-Do Tasks" parent="mail.mail_feeds" sequence="20"/>
-    </data>
-</openerp>
+</odoo>

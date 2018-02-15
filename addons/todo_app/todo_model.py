@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # The first line is a special marker telling the Python interpreter that this 
 # file has UTF-8, so that it can expect and handle non-ASCII characters.
-from openerp import models, fields, api
+from odoo import models, fields, api
 class TodoTask(models.Model):
     _name = 'todo.task'
     name = fields.Char('Description', required=True)
