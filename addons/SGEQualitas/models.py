@@ -44,9 +44,7 @@ class alumno(models.Model):
     def _calc_exam_sus(self):
         r.examenes_suspendidos = 0
         for r in self:
-            for exam in r.examenes_ids
-                if(exam.nota < 4):
-                    r.examenes_suspendidos += 1
+            r.examenes_suspendidos = len(r.examenes_ids)
     
     @api.depends('can_do_fct', 'examenes_suspendidos')
     def _can_do_fct(self):

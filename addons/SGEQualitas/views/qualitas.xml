@@ -211,7 +211,7 @@
                 </tree>
             </field>
         </record>
-        <!--
+        
         <record model="ir.ui.view" id="ausencia_gantt_view">
             <field name="name">ausencia.gantt</field>
             <field name="model">qualitas.ausencia</field>
@@ -224,7 +224,7 @@
             </field>
         </record>
         
-                    -->
+                
         
         
         <menuitem id="qualitas_menu" name="Qualitas"/>

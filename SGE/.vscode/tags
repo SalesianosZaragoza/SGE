@@ -1,0 +1,189 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Abuelo	../Clases.py	/^class Abuelo:$/;"	kind:class	line:13
+Bucles.py	../Bucles.py	1;"	kind:file	line:1
+Christmas.py	../src/Christmas.py	1;"	kind:file	line:1
+ChristmasTest.py	../tests/ChristmasTest.py	1;"	kind:file	line:1
+Clases.py	../Clases.py	1;"	kind:file	line:1
+ClassFather	../Clases.py	/^class ClassFather(Abuelo):$/;"	kind:class	line:25
+ClassMother	../Clases.py	/^class ClassMother(Abuelo):$/;"	kind:class	line:19
+Eggs	../Clases.py	/^class Eggs(Son):$/;"	kind:class	line:49
+EntzradaError	../Exceptions.py	/^class EntzradaError(Error):$/;"	kind:class	line:34
+Erzror	../Exceptions.py	/^class Erzror(Exception):$/;"	kind:class	line:30
+Estructuras.py	../Estructuras.py	1;"	kind:file	line:1
+Exceptions.py	../Exceptions.py	1;"	kind:file	line:1
+Fibo.py	../Fibo.py	1;"	kind:file	line:1
+ForComprehension.py	../ForComprehension.py	1;"	kind:file	line:1
+FunWithSnow	../src/Christmas.py	/^class FunWithSnow:$/;"	kind:class	line:4
+Funciones.py	../Funciones.py	1;"	kind:file	line:1
+Import.py	../Import.py	1;"	kind:file	line:1
+ImportFibo.py	../ImportFibo.py	1;"	kind:file	line:1
+Juego	../juego.py	/^class Juego:$/;"	kind:class	line:3
+Jugador	../juego.py	/^class Jugador:$/;"	kind:class	line:14
+Lambda.py	../Lambda.py	1;"	kind:file	line:1
+Launch.py	../Launch.py	1;"	kind:file	line:1
+List1.py	../src/List1.py	1;"	kind:file	line:1
+List1Test.py	../tests/List1Test.py	1;"	kind:file	line:1
+List2.py	../src/List2.py	1;"	kind:file	line:1
+List2Test.py	../tests/List2Test.py	1;"	kind:file	line:1
+MiError	../Exceptions.py	/^class MiError(Exception):$/;"	kind:class	line:17
+MyException	../Exceptions.py	/^class MyException:$/;"	kind:class	line:3
+MyTest	../tests/ChristmasTest.py	/^class MyTest(unittest.TestCase):$/;"	kind:class	line:8
+MyTest	../tests/List1Test.py	/^class MyTest(unittest.TestCase):$/;"	kind:class	line:4
+MyTest	../tests/List2Test.py	/^class MyTest(unittest.TestCase):$/;"	kind:class	line:7
+MyTest	../tests/String1Test.py	/^class MyTest(unittest.TestCase):$/;"	kind:class	line:5
+MyTest	../tests/String2Test.py	/^class MyTest(unittest.TestCase):$/;"	kind:class	line:5
+Partial.py	../Partial.py	1;"	kind:file	line:1
+Personaje	../juego.py	/^class Personaje(Jugador):$/;"	kind:class	line:30
+PrimerosPasos.py	../PrimerosPasos.py	1;"	kind:file	line:1
+Son	../Clases.py	/^class Son(ClassMother, ClassFather):$/;"	kind:class	line:36
+String1.py	../src/String1.py	1;"	kind:file	line:1
+String1Test.py	../tests/String1Test.py	1;"	kind:file	line:1
+String2.py	../src/String2.py	1;"	kind:file	line:1
+String2Test.py	../tests/String2Test.py	1;"	kind:file	line:1
+Variables.py	../Variables.py	1;"	kind:file	line:1
+__init_	../juego.py	/^	def __init_(self, vida, ataque, damage, precision):$/;"	kind:member	line:15
+__init__	../Clases.py	/^    def __init__(self):$/;"	kind:member	line:37
+__init__	../Clases.py	/^    def __init__(self, *cookingStyle):$/;"	kind:member	line:52
+__init__	../Exceptions.py	/^    def __init__(self, message):$/;"	kind:member	line:4
+__init__	../Exceptions.py	/^    def __init__(self, valor):$/;"	kind:member	line:18
+__init__	../juego.py	/^	def __init__(self, jugador1, jugador2):$/;"	kind:member	line:4
+__init__	../juego.py	/^	def __init__(self, nombre, vida, ataque, damage, precision):$/;"	kind:member	line:31
+__init__.py	../src/__init__.py	1;"	kind:file	line:1
+__init__.py	../tests/__init__.py	1;"	kind:file	line:1
+__iznit__	../Exceptions.py	/^    def __iznit__(self, expresion, mensaje):$/;"	kind:member	line:42
+__str__	../Exceptions.py	/^    def __str__(self):$/;"	kind:member	line:20
+_cookingStyle	../Clases.py	/^    _cookingStyle = "mediterranea"$/;"	kind:variable	line:50
+a	../Bucles.py	/^a = ['Mary', 'tenia', 'un', 'corderito']$/;"	kind:variable	line:13
+a	../Bucles.py	/^a = ['bruja','pikachu', 'xyzzy']$/;"	kind:variable	line:23
+a	../Estructuras.py	/^a = ['pan', 'huevos', 100, 1234]$/;"	kind:variable	line:21
+a	../Estructuras.py	/^a = ['pan', 'huevos', 100, 1234]$/;"	kind:variable	line:30
+a	../Estructuras.py	/^a = [-1, 1, 66.25, 333, 333, 1234.5]$/;"	kind:variable	line:44
+anotherFunction	../Clases.py	/^    def anotherFunction(self, mediterranea):$/;"	kind:member	line:29
+anotherFunction	../Clases.py	/^    def anotherFunction(self, mediterranea):$/;"	kind:member	line:57
+array	../for.py	/^array = [range(0, 9)]$/;"	kind:variable	line:40
+array2D	../for.py	/^array2D = [$/;"	kind:variable	line:34
+array2D	../for.py	/^array2D = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]$/;"	kind:variable	line:19
+array2D	../for.py	/^array2D = []$/;"	kind:variable	line:23
+both_ends	../src/String1.py	/^def both_ends(s):$/;"	kind:function	line:17
+c	../Funciones.py	/^c = sumatory();$/;"	kind:variable	line:15
+clase	../tests/ChristmasTest.py	/^clase = FunWithSnow()$/;"	kind:variable	line:6
+clase	../tests/List2Test.py	/^clase = FunWithSnow()$/;"	kind:variable	line:5
+cliente	../Funciones.py	/^           cliente="Juan Garau",$/;"	kind:variable	line:68
+cuadrado	../Lambda.py	/^def cuadrado(n):    return n ** 2$/;"	kind:function	line:4
+cuadrados	../for.py	/^cuadrados = [n * i for n in range(0, 10) $/;"	kind:variable	line:12
+d	../Funciones.py	/^d = {"tension": "cuatro millones", "estado": "demacrado",$/;"	kind:variable	line:77
+decirHolaYAdios	../Clases.py	/^decirHolaYAdios = sayAdios$/;"	kind:variable	line:11
+decirhola	../Clases.py	/^decirhola = sayHola$/;"	kind:variable	line:10
+defaultVarForParam1	../Funciones.py	/^defaultVarForParam1 = 1;$/;"	kind:variable	line:2
+defaultVarForParam2	../Funciones.py	/^defaultVarForParam2 = 2;$/;"	kind:variable	line:3
+donuts	../src/String1.py	/^def donuts(count):$/;"	kind:function	line:8
+emptyDict	../Import.py	/^emptyDict = {}$/;"	kind:variable	line:11
+es_par	../Lambda.py	/^def es_par(n):    $/;"	kind:function	line:10
+f	../Funciones.py	/^def f(number=i):$/;"	kind:function	line:26
+f	../Lambda.py	/^f = saludar("es") $/;"	kind:variable	line:44
+f	../Partial.py	/^def f(a, b, c, x):$/;"	kind:function	line:3
+f1	../Funciones.py	/^def f1(a, L=[]):$/;"	kind:function	line:39
+f2	../Funciones.py	/^def f2(a, L=None):$/;"	kind:function	line:48
+fib	../Fibo.py	/^def fib(n):  # escribe la serie Fibonacci hasta n$/;"	kind:function	line:3
+fib2	../Fibo.py	/^def fib2(n):  # devuelve la serie Fibonacci hasta n$/;"	kind:function	line:9
+fix_start	../src/String1.py	/^def fix_start(s):$/;"	kind:function	line:30
+for.py	../for.py	1;"	kind:file	line:1
+front_back	../src/String2.py	/^def front_back(a, b):$/;"	kind:function	line:31
+front_x	../src/List1.py	/^def front_x(words):$/;"	kind:function	line:17
+frutafresca	../ForComprehension.py	/^frutafresca = ['  banana', '  mora de Logan ', 'maracuya  ']$/;"	kind:variable	line:1
+funcion	../Clases.py	/^    funcion = sayMama$/;"	kind:variable	line:22
+g	../Partial.py	/^g = partial(f, 3, 1, 4)$/;"	kind:variable	line:6
+herir	../juego.py	/^	def herir(self, damage):$/;"	kind:member	line:25
+i	../Funciones.py	/^i = 5$/;"	kind:variable	line:24
+i	../Funciones.py	/^i = 6$/;"	kind:variable	line:29
+imp	../Lambda.py	/^def imp(arg):$/;"	kind:function	line:57
+indice	../Bucles.py	/^indice = 30$/;"	kind:variable	line:17
+integer1	../Funciones.py	/^integer1 = 3;$/;"	kind:variable	line:9
+integer2	../Funciones.py	/^integer2 = 4;$/;"	kind:variable	line:10
+isPalindrome	../src/Christmas.py	/^    def isPalindrome(self, str):$/;"	kind:member	line:5
+juego.py	../juego.py	1;"	kind:file	line:1
+l	../Lambda.py	/^l = [1, 2, 3, 4]$/;"	kind:variable	line:2
+l2	../Lambda.py	/^l2 = filter(es_par, l)$/;"	kind:variable	line:12
+l2	../Lambda.py	/^l2 = map(cuadrado, l)$/;"	kind:variable	line:5
+l2	../Lambda.py	/^l2 = map(cuadrado, l)$/;"	kind:variable	line:8
+l2	../Lambda.py	/^l2 = reduce(sumar, map(cuadrado, l))$/;"	kind:variable	line:18
+l2	../Lambda.py	/^l2 = reduce(sumar, map(raiz, l))$/;"	kind:variable	line:19
+linear_merge	../src/List2.py	/^def linear_merge(list1, list2):$/;"	kind:function	line:13
+lista	../for.py	/^lista = []$/;"	kind:variable	line:1
+lista	../for.py	/^lista = [n for n in range(0,10)]$/;"	kind:variable	line:8
+loro	../Funciones.py	/^def loro(tension, estado='rostizado', accion='explotar'):$/;"	kind:function	line:72
+main	../tests/ChristmasTest.py	/^def main():$/;"	kind:function	line:23
+main	../tests/List1Test.py	/^def main():$/;"	kind:function	line:28
+main	../tests/List2Test.py	/^def main():$/;"	kind:function	line:23
+main	../tests/String1Test.py	/^def main():$/;"	kind:function	line:32
+main	../tests/String2Test.py	/^def main():$/;"	kind:function	line:24
+mat	../ForComprehension.py	/^mat = [[1, 2, 3],$/;"	kind:variable	line:18
+match_ends	../src/List1.py	/^def match_ends(words):$/;"	kind:function	line:6
+mi_decorador	../Lambda.py	/^def mi_decorador(funcion):    $/;"	kind:function	line:49
+mix_up	../src/String1.py	/^def mix_up(a, b):$/;"	kind:function	line:41
+myson	../Clases.py	/^myson = Son()$/;"	kind:variable	line:41
+newpj	../juego.py	/^newpj = Personaje("Pedro", 10, "patada", 5, 0.9)$/;"	kind:variable	line:41
+not_bad	../src/String2.py	/^def not_bad(s):$/;"	kind:function	line:20
+nueva	../Lambda.py	/^    def nueva(*args):        $/;"	kind:function	line:50
+ok	../Bucles.py	/^ok = 'no';$/;"	kind:variable	line:31
+otro_nombre	../for.py	/^otro_nombre = list(array)$/;"	kind:variable	line:44
+pegar	../juego.py	/^	def pegar(self, rival):$/;"	kind:member	line:21
+puesto	../Funciones.py	/^           puesto="Venta de Queso Peruano")$/;"	kind:variable	line:70
+raiz	../Lambda.py	/^def raiz(n):    return math.sqrt(n)$/;"	kind:function	line:7
+remove_adjacent	../src/List2.py	/^def remove_adjacent(nums):$/;"	kind:function	line:5
+reverseList	../src/Christmas.py	/^    def reverseList(self, list):$/;"	kind:member	line:11
+reverseString	../src/Christmas.py	/^    def reverseString(self, list):$/;"	kind:member	line:8
+saludar	../Lambda.py	/^def saludar(lang):    $/;"	kind:function	line:35
+saludar_en	../Lambda.py	/^    def saludar_en():        $/;"	kind:function	line:38
+saludar_es	../Lambda.py	/^    def saludar_es():$/;"	kind:function	line:36
+saludar_fr	../Lambda.py	/^    def saludar_fr():        $/;"	kind:function	line:40
+sayAdios	../Clases.py	/^def sayAdios(funcion):$/;"	kind:function	line:5
+sayHola	../Clases.py	/^def sayHola():$/;"	kind:function	line:1
+sayMama	../Clases.py	/^    def sayMama(self):$/;"	kind:member	line:20
+sayName	../Clases.py	/^    def sayName(self):$/;"	kind:member	line:14
+sayName	../Clases.py	/^    def sayName(self):$/;"	kind:member	line:32
+sayPapa	../Clases.py	/^    def sayPapa(self):$/;"	kind:member	line:26
+sort_last	../src/List1.py	/^def sort_last(tuples):$/;"	kind:function	line:28
+step	../Bucles.py	/^step = 10$/;"	kind:variable	line:18
+sumAndPow2	../Lambda.py	/^def sumAndPow2(l):$/;"	kind:function	line:20
+sumAndSquare	../Lambda.py	/^def sumAndSquare(l):$/;"	kind:function	line:25
+sumar	../Lambda.py	/^def sumar(x, y):    $/;"	kind:function	line:14
+sumatory	../Funciones.py	/^def sumatory(param1=defaultVarForParam1, param2=defaultVarForParam2):$/;"	kind:function	line:4
+testBothEnds	../tests/String1Test.py	/^    def testBothEnds(self):$/;"	kind:member	line:12
+testDonuts	../tests/String1Test.py	/^    def testDonuts(self):$/;"	kind:member	line:6
+testFixStart	../tests/String1Test.py	/^    def testFixStart(self):$/;"	kind:member	line:18
+testFront	../tests/List1Test.py	/^    def testFront(self):$/;"	kind:member	line:11
+testFrontBack	../tests/String2Test.py	/^    def testFrontBack(self):$/;"	kind:member	line:17
+testIsPalindrome	../tests/ChristmasTest.py	/^    def testIsPalindrome(self):$/;"	kind:member	line:10
+testLinearMerge	../tests/List2Test.py	/^    def testLinearMerge(self):$/;"	kind:member	line:13
+testMatchEnds	../tests/List1Test.py	/^    def testMatchEnds(self):$/;"	kind:member	line:6
+testMixUp	../tests/String1Test.py	/^    def testMixUp(self):$/;"	kind:member	line:24
+testNotBad	../tests/String2Test.py	/^    def testNotBad(self):$/;"	kind:member	line:11
+testRemoveAdjacement	../tests/List2Test.py	/^    def testRemoveAdjacement(self):$/;"	kind:member	line:8
+testReverseWordsOnAList	../tests/ChristmasTest.py	/^    def testReverseWordsOnAList(self):$/;"	kind:member	line:19
+testReverseWordsOnAString	../tests/ChristmasTest.py	/^    def testReverseWordsOnAString(self):$/;"	kind:member	line:16
+testSortLast	../tests/List1Test.py	/^    def testSortLast(self):$/;"	kind:member	line:20
+testVerbing	../tests/String2Test.py	/^    def testVerbing(self):$/;"	kind:member	line:6
+thelist	../Import.py	/^thelist = [5, 3, 'p', 9, 'e']$/;"	kind:variable	line:1
+theseEggsInMyProgram	../Clases.py	/^theseEggsInMyProgram = Eggs("hamburguesa", "param2")$/;"	kind:variable	line:65
+thisdict	../Import.py	/^thisdict = {'a':1, 'b':23, 'c':"eggs"}$/;"	kind:variable	line:12
+tuplasNo	../Bucles.py	/^tuplasNo = ('n', 'no', 'No', 'NO');$/;"	kind:variable	line:29
+tuplasPuede	../Bucles.py	/^tuplasPuede = ('puede', 'posiblemente', 'quizas');$/;"	kind:variable	line:30
+tuplasSi	../Bucles.py	/^tuplasSi = ('s', 'S', 'si', 'Si', 'SI')$/;"	kind:variable	line:28
+turno	../juego.py	/^	def turno(self):$/;"	kind:member	line:8
+variable	../Bucles.py	/^variable = 0;$/;"	kind:variable	line:3
+variable	../Variables.py	/^variable = '123';$/;"	kind:variable	line:7
+variable	../Variables.py	/^variable = 1;$/;"	kind:variable	line:11
+variable	../Variables.py	/^variable = False;$/;"	kind:variable	line:14
+vec	../ForComprehension.py	/^vec = [2, 4, 6]$/;"	kind:variable	line:3
+vec1	../ForComprehension.py	/^vec1 = [2, 4, 6]$/;"	kind:variable	line:11
+vec2	../ForComprehension.py	/^vec2 = [4, 3, -9]$/;"	kind:variable	line:12
+vendedor	../Funciones.py	/^           vendedor="Miguel Paez",$/;"	kind:variable	line:69
+ventadequeso	../Funciones.py	/^def ventadequeso(tipo, *argumentos, **palabrasclaves):$/;"	kind:function	line:55
+ventadequeso	../Launch.py	/^def ventadequeso(tipo, *argumentos):$/;"	kind:function	line:3
+verbing	../src/String2.py	/^def verbing(s):$/;"	kind:function	line:8
