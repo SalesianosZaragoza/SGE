@@ -1,0 +1,40 @@
+<odoo>   
+
+        <record model="ir.actions.act_window" id="alumno_list_action">
+            <field name = "name">alumno</field>
+            <field name = "res_model">base.entidad</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Prueba de la herencia mediante Extension</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="alumno_form_view">
+            <field name="name">alumno.form</field>
+            <field name="model">base.entidad</field>    
+            <field name="inherit_id" ref="baseModule.entidad_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='nombreEntidad']" position="after">
+                    <field name="fechaCumple" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='alumno_tree_view'>
+            <field name="name">alumno.tree</field>
+            <field name="model">base.entidad</field>
+            <field name="arch" type="xml">
+                <tree string="Entidad Tree">
+                    <field name="nombreEntidad"/>
+                    <field name="fechaCumple"/>
+                </tree>
+            </field>
+        </record>
+
+                      
+        <menuitem id="base_menu" name="Modulo ejemplo Extension"/>      
+        <menuitem id="modulo_base" name="Modulo Extension" parent = "base_menu"/>
+        <menuitem id="alumno_menu" name="Alumno" parent = "modulo_base" action = "alumno_list_action"/>
+    
+</odoo>
