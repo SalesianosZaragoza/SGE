@@ -17,6 +17,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='nombreEntidad']" position="after">
                     <field name="fechaCumple" />
+                    <field name="colegios" />
                 </xpath>
             </field>
         </record>
@@ -28,6 +29,38 @@
                 <tree string="Entidad Tree">
                     <field name="nombreEntidad"/>
                     <field name="fechaCumple"/>
+                    <field name="colegios" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="colegio_list_action">
+            <field name = "name">colegio</field>
+            <field name = "res_model">herenciaextension.colegio</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="colegio_form_view">
+            <field name="name">colegio.form</field>
+            <field name="model">herenciaextension.colegio</field>    
+            <field name="arch" type="xml">
+                <form string="Colegio Form">
+                    <field name="nombre" />
+                    <field name="alumnos" />
+                </form>                
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='colegio_tree_view'>
+            <field name="name">colegio.tree</field>
+            <field name="model">herenciaextension.colegio</field>
+            <field name="arch" type="xml">
+                <tree string="Colegio Tree">
+                    <field name="nombre"/>
+                    <field name="alumnos"/>
                 </tree>
             </field>
         </record>
@@ -36,5 +69,6 @@
         <menuitem id="base_menu" name="Modulo ejemplo Extension"/>      
         <menuitem id="modulo_base" name="Modulo Extension" parent = "base_menu"/>
         <menuitem id="alumno_menu" name="Alumno" parent = "modulo_base" action = "alumno_list_action"/>
+        <menuitem id="colegio_menu" name="Colegio" parent = "modulo_base" action = "colegio_list_action"/>
     
 </odoo>
