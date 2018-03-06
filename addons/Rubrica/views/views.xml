@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="worker_search_view">
+          <field name="name">workersearch</field>
+          <field name="model">thefinalrubrica.worker</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="name"/>
+              </search>
+          </field>
+        </record>
+   
+        
+        <record model="ir.actions.act_window" id="cardealer_list_action">
+            <field name = "name">CarDealer</field>
+            <field name = "res_model">thefinalrubrica.cardealership</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+        <record model="ir.actions.act_window" id="tools_list_action">
+            <field name = "name">Tools</field>
+            <field name = "res_model">thefinalrubrica.tools</field>
+            <field name = "view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="vehicles_list_action">
+            <field name = "name">Vehicles</field>
+            <field name = "res_model">thefinalrubrica.vehicles</field>
+            <field name = "view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="worker_list_action">
+            <field name = "name">Worker</field>
+            <field name = "res_model">thefinalrubrica.worker</field>
+            <field name = "view_mode">tree,form</field>
+            <field name="context" eval="{'worker_search_view':2}"/>
+        </record>
+    
+	    <menuitem id="carDealership_menu" name="CarDealership"/>
+	        
+	    <menuitem id="carDealership_menuses_menu" name="CarDealership" parent = "carDealership_menu"/>
+	        
+	    <menuitem id="dealer_menu" name="Cardealer" parent = "carDealership_menuses_menu" action = "cardealer_list_action"/>
+
+        <menuitem id="tools_menu" name="Tools" parent = "carDealership_menuses_menu" action = "tools_list_action"/>
+
+        <menuitem id="vehicles_menu" name="Vehicles" parent = "carDealership_menuses_menu" action = "vehicles_list_action"/>
+
+        <menuitem id="worker_menu" name="Worker" parent = "carDealership_menuses_menu" action = "worker_list_action"/>
+
+       
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+<odoo>   
+
+        <record model="ir.actions.act_window" id="entidad_list_action">
+            <field name = "name">Entidad</field>
+            <field name = "res_model">base.entidad</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Entidad usada como base para el examen</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="entidad_form_view">
+            <field name="name">entidad.form</field>
+            <field name="model">base.entidad</field>    
+            <field name="arch" type="xml">
+                <form string = 'Entidad Form'>
+                    <field name="nombreEntidad"/>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='entidad_tree_view'>
+            <field name="name">entidad.tree</field>
+            <field name="model">base.entidad</field>
+            <field name="arch" type="xml">
+                <tree string="Entidad Tree">
+                    <field name="nombreEntidad"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="empresa_list_action">
+            <field name = "name">Empresa</field>
+            <field name = "res_model">base.empresa</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create">Entidad usada como base para el examen</p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="empresa_form_view">
+            <field name="name">empresa.form</field>
+            <field name="model">base.empresa</field>    
+            <field name="arch" type="xml">
+                <form string = 'Empresa Form'>
+                    <field name="nombreEmpresa"/>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='empresa_tree_view'>
+            <field name="name">empresa.tree</field>
+            <field name="model">base.empresa</field>
+            <field name="arch" type="xml">
+                <tree string="Empresa Tree">
+                    <field name="nombreEmpresa"/>
+                </tree>
+            </field>
+        </record>
+                      
+        <menuitem id="base_menu" name="Modulo Base"/>      
+        <menuitem id="modulo_base" name="Modulo Base" parent = "base_menu"/>
+        <menuitem id="persona_menu" name="Persona" parent = "modulo_base" action = "entidad_list_action"/>
+        <menuitem id="empresa_menu" name="Empresa" parent = "modulo_base" action = "empresa_list_action"/>
+    
+</odoo>

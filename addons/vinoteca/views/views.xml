@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        
+		<record model="ir.ui.view" id="bodega_form_view">
+            <field name="name">bodega.form</field>
+            <field name="model">vinoteca.bodega</field>
+            <field name="arch" type="xml">
+                <form string="Articulo Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <notebook>
+                            <page string="Información adicional">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="bodega_list_action">
+            <field name="name">Bodegas</field>
+            <field name="res_model">vinoteca.bodega</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Registra la primera bodega!
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bodega_search_view">
+            <field name="name">bodega.search</field>
+            <field name="model">vinoteca.bodega</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+		<record model="ir.ui.view" id="zumo_form_view">
+            <field name="name">zumo.form</field>
+            <field name="model">vinoteca.zumo</field>
+            <field name="arch" type="xml">
+                <form string="Zumo Form">
+                    <sheet>
+                        <group>
+                           <field name="name"/>
+                            <field name="code"/>
+                            <field name="price"/>
+                            <field name="typeContainer"/>
+                            <field name="sugar"/>
+                            <field name="percentage_sugar" widget="progressbar"/>
+                            <field name="pulpa"/>
+                            <field name="bodega_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="zumo_list_action">
+            <field name="name">Zumos</field>
+            <field name="res_model">vinoteca.zumo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Registra el primer zumo!
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="zumo_tree_view">
+            <field name="name">zumo.tree</field>
+            <field name="model">vinoteca.zumo</field>
+            <field name="arch" type="xml">
+                <tree string="Zumo Tree" decoration-info="sugar&lt;5" decoration-danger="sugar&gt;15">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="price"/>
+                    <field name="typeContainer"/>
+                    <field name="sugar" invisible="1"/>
+                    <field name="percentage_sugar" widget="progressbar"/>
+                    <field name="pulpa"/>
+                    <field name="bodega_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vinoteca_zumo_graph_view">
+            <field name="name">vinoteca.zumo.graph</field>
+            <field name="model">vinoteca.zumo</field>
+            <field name="arch" type="xml">
+                <graph string="Precio por zumo">
+                    <field name="name"/>
+                    <field name="price" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="zumo_search_view">
+            <field name="name">zumo.search</field>
+            <field name="model">vinoteca.zumo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="typeContainer"/>
+                </search>
+            </field>
+        </record>
+
+		<record model="ir.ui.view" id="cliente_form_view">
+            <field name="name">cliente.form</field>
+            <field name="model">vinoteca.cliente</field>
+            <field name="arch" type="xml">
+                <form string="Cliente Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <notebook> <!---->
+                            <page string="Compras">
+                                <field name="compras_ids">
+                                    <tree string="Datos de compra del cliente">
+                                        <field name="code"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cliente_list_action">
+            <field name="name">Clientes</field>
+            <field name="res_model">vinoteca.cliente</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Registra al primer cliente!
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cliente_search_view">
+            <field name="name">cliente.search</field>
+            <field name="model">vinoteca.cliente</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="compra_form_view">
+            <field name="name">compra.form</field>
+            <field name="model">vinoteca.compra</field>
+            <field name="arch" type="xml">
+                <form string="Compra Form">
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="date"/>
+                            <field name="cliente_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Productos">
+                                <field name="productos_ids">
+                                    <tree string="Productos de la compra">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="price"/>
+                                        <field name="typeContainer"/>
+                                        <field name="bodega_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="compra_list_action">
+            <field name="name">Compra</field>
+            <field name="res_model">vinoteca.compra</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Registra la primera compra!
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="compra_tree_view">
+            <field name="name">compra.tree</field>
+            <field name="model">vinoteca.compra</field>
+            <field name="arch" type="xml">
+                <tree string="Compra Tree">
+                    <field name="code"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_vinoteca_cimpra_kanban">
+            <field name="name">vinoteca.compra.kanban</field>
+            <field name="model">vinoteca.compra</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="cliente_id">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    Codigo compra:
+                                    <field name="code"/>
+                                    <br/>
+                                    Fecha compra:
+                                    <field name="date"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="compra_calendar_view">
+            <field name="name">compra.calendar</field>
+            <field name="model">vinoteca.compra</field>
+            <field name="arch" type="xml">
+                <calendar string="Compra Calendar" date_start="date" date_stop="date" color="code">
+                    <field name="code"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="producto_form_view">
+            <field name="name">producto.form</field>
+            <field name="model">vinoteca.producto</field>
+            <field name="arch" type="xml">
+                <form string="Producto Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="price"/>
+                            <field name="typeContainer"/>
+                            <field name="bodega_id"/>
+                        </group>
+                        <notebook> <!---->
+                            <page string="Compras">
+                                <field name="compras_ids">
+                                    <tree string="Datos de compra del producto">
+                                        <field name="code"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="producto_list_action">
+            <field name="name">Producto</field>
+            <field name="res_model">vinoteca.producto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Registra el primer producto!
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="producto_tree_view">
+            <field name="name">producto.tree</field>
+            <field name="model">vinoteca.producto</field>
+            <field name="arch" type="xml">
+                <tree string="Zumo Tree">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="price"/>
+                    <field name="typeContainer"/>
+                    <field name="bodega_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <menuitem id="main_vinoteca_menu" name="Vinoteca"/>
+
+        <menuitem id="vinoteca_menu" name="Mi vinoteca" parent="main_vinoteca_menu"/>
+
+        <menuitem id="bodega_menu" name="Bodegas" parent="vinoteca_menu" action="bodega_list_action"/>
+
+        <menuitem id="producto_menu" name="Productos" parent="vinoteca_menu" action="producto_list_action"/>
+
+        <menuitem id="zumo_menu" name="Zumos" parent="producto_menu" action="zumo_list_action"/>
+
+        <menuitem id="cliente_menu" name="Clientes" parent="vinoteca_menu" action="cliente_list_action"/>
+
+        <menuitem id="compra_menu" name="Compras" parent="vinoteca_menu" action="compra_list_action"/>
+
+</odoo>

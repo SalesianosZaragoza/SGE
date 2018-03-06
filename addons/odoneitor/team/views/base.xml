@@ -1,0 +1,40 @@
+<odoo>   
+
+        <record model="ir.actions.act_window" id="team_list_action">
+            <field name = "name">Team</field>
+            <field name = "res_model">team.team</field>
+            <field name = "view_type">form</field>
+            <field name = "view_mode">tree,form</field>
+            <field name = "help" type= "html">
+                <p class="oe_view_nocontent_create"></p>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="team_form_view">
+            <field name="name">team.form</field>
+            <field name="model">team.team</field>    
+            <field name="arch" type="xml">
+                <form string = 'Team Form'>
+                    <label for="name" string="Name: " />    
+                    <field name="name"/>
+                    <label for="hours" string="Hours: " /> 
+                    <field name="hours"/>
+                </form>
+            </field>
+        </record>
+        
+        <record model='ir.ui.view' id='team_tree_view'>
+            <field name="name">team.tree</field>
+            <field name="model">team.team</field>
+            <field name="arch" type="xml">
+                <tree string="Team Tree">
+                    <field name="name"/>
+                    <field name="hours"/>
+                </tree>
+            </field>
+        </record>
+                      
+        <menuitem id="base_menu" name="Modulo Base"/>      
+        <menuitem id="modulo_base" name="Modulo Base" parent = "base_menu"/>
+        <menuitem id="team_menu" name="Team" parent = "modulo_base" action = "team_list_action"/>
+</odoo>

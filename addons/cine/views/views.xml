@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="cine.list_actor">
+      <field name="name">actor list</field>
+      <field name="model">cine.actor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="idpais"/>
+          <field name="idspeliculas"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- <record model="ir.ui.view" id="cine_form_view_actor">
+        <field name="name">cine form</field>
+        <field name="model">cine.actor</field>    
+        <field name="arch" type="xml">
+            <form string="Colegio Form">
+                <field name="name"/>
+                <field name="edad"/>
+                <field name="idpais"/>
+                <field name="idspeliculas"/>
+            </form>                
+        </field>
+    </record> -->
+
+    <record model="ir.ui.view" id="actor_search_view">
+      <field name="name">actor search</field>
+      <field name="model">cine.actor</field>
+      <field name="arch" type="xml">
+          <search>
+              <field name="name"/>
+              <field name="edad"/>
+              <field name="idpais"/>
+              <field name="idspeliculas"/>
+          </search>
+      </field>
+    </record>
+   
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="cine.action_actor">
+      <field name="name">Actor</field>
+      <field name="res_model">cine.actor</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context" eval="{'actor_search_view':2}"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="cine.action_pais">
+      <field name="name">Pais</field>
+      <field name="res_model">cine.pais</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cine.action_director">
+      <field name="name">Director</field>
+      <field name="res_model">cine.director</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cine.action_pelicula">
+      <field name="name">Pelicula</field>
+      <field name="res_model">cine.pelicula</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cine.action_modelo">
+      <field name="name">modelo</field>
+      <field name="res_model">cine.modelo</field>
+      <field name="view_mode">tree,form</field>
+       <field name = "help" type= "html">
+          <p class="oe_view_nocontent_create">Ya me puedes crear un registro rapidito</p>
+        </field>
+    </record>
+
+    <!-- Top menu item -->
+    
+    <menuitem name="cine" id="cine.menu_root"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Menu" id="cine.menu" parent="cine.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="cine.menu_2" parent="cine.menu_root"/> -->
+   
+    <!-- actions -->
+    
+    <menuitem name="Actor" id="cine.menu_actor" parent="cine.menu"
+              action="cine.action_actor"/>
+    <menuitem name="Director" id="cine.menu_director" parent="cine.menu"
+              action="cine.action_director"/>
+    <menuitem name="Pelicula" id="cine.menu_pelicula" parent="cine.menu"
+              action="cine.action_pelicula"/>
+    <menuitem name="Pais" id="cine.menu_pais" parent="cine.menu"
+              action="cine.action_pais"/>
+    <menuitem name="Modelo" id="cine.menu_modelo" parent="cine.menu"
+              action="cine.action_modelo"/>
+    <!-- <menuitem name="Server to list" id="cine" parent="cine.menu_2"
+              action="cine.action_server"/> -->
+   
+  </data>
+</odoo>

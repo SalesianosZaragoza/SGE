@@ -1,0 +1,198 @@
+<odoo>
+  <data>
+    
+    <!-- CONDUCTOR -->
+
+    <record model="ir.actions.act_window" id="flotas.action_conductor">
+      <field name="name">conductor</field>
+      <field name="res_model">flotas.conductor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model='ir.ui.view' id='conductor_form_view'>
+      <field name="name">condcutor.form</field>
+      <field name="model">flotas.conductor</field>    
+      <field name="arch" type="xml">
+        <form string="Conductor Form">
+            <field name="name" />
+            <field name="dni"/>
+          </form>                
+        </field>
+    </record>
+        
+    <record model='ir.ui.view' id='conductor_tree_view'>
+      <field name="name">condcutor.tree</field>
+      <field name="model">flotas.conductor</field>
+        <field name="arch" type="xml">
+            <tree string="Conductor Tree">
+              <field name="name"/>
+              <field name="dni"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- PROVINCIA -->
+
+    <record model="ir.actions.act_window" id="flotas.action_provincia">
+      <field name="name">provincia</field>
+      <field name="res_model">flotas.provincia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model='ir.ui.view' id='provincia_form_view'>
+      <field name="name">provincia.form</field>
+      <field name="model">flotas.provincia</field>    
+      <field name="arch" type="xml">
+        <form string="Provincia Form">
+            <field name="name" />
+          </form>                
+        </field>
+    </record>
+        
+    <record model='ir.ui.view' id='provincia_tree_view'>
+      <field name="name">provincia.tree</field>
+      <field name="model">flotas.provincia</field>
+        <field name="arch" type="xml">
+            <tree string="Provincia Tree">
+              <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- SEGURO -->
+
+    <record model="ir.actions.act_window" id="flotas.action_seguro">
+      <field name="name">seguro</field>
+      <field name="res_model">flotas.seguro</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <record model='ir.ui.view' id='seguro_form_view'>
+      <field name="name">seguro.form</field>
+      <field name="model">flotas.seguro</field>    
+      <field name="arch" type="xml">
+        <form string="Seguro Form">
+            <field name="name" />
+            <field name="fechadevencimiento" />
+          </form>                
+        </field>
+    </record>
+        
+    <record model='ir.ui.view' id='seguro_tree_view'>
+      <field name="name">seguro.tree</field>
+      <field name="model">flotas.seguro</field>
+        <field name="arch" type="xml">
+            <tree string="Seguro Tree">
+              <field name="name"/>
+              <field name="fechadevencimiento"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model='ir.ui.view' id='seguro_calendar_view'>
+      <field name="name">seguro.calendar</field>
+      <field name="model">flotas.seguro</field>
+        <field name="arch" type="xml">
+            <calendar string="Seguro Calendar">
+              <field name="name"/>
+              <field name="fechadevencimiento"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- VEHICULO -->
+
+    <record model="ir.actions.act_window" id="flotas.action_vehiculo">
+      <field name="name">vehiculo</field>
+      <field name="res_model">flotas.vehiculo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="vehiculo_form_view">
+      <field name="name">vehiculo.form</field>
+      <field name="model">flotas.vehiculo</field>    
+      <field name="arch" type="xml">
+        <form string="Vehiculo Form">
+            <field name="marca" />
+            <field name="color" />
+            <field name="asientos" />
+          </form>                
+        </field>
+    </record>
+        
+    <record model='ir.ui.view' id='vehiculo_tree_view'>
+      <field name="name">vehiculo.tree</field>
+      <field name="model">flotas.vehiculo</field>
+      <field name="arch" type="xml">
+        <tree string="Vehiculo Tree">
+            <field name="marca" />
+            <field name="color" />
+            <field name="asientos" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- VIAJE -->
+
+    <record model="ir.actions.act_window" id="flotas.action_viaje">
+      <field name="name">viaje</field>
+      <field name="res_model">flotas.viaje</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <record model="ir.ui.view" id="viaje_form_view">
+      <field name="name">viaje.form</field>
+      <field name="model">flotas.viaje</field>    
+      <field name="arch" type="xml">
+        <form string="Viaje Form">
+            <field name="fecha" />
+            <field name="duracionhoras" />
+          </form>                
+        </field>
+    </record>
+        
+    <record model='ir.ui.view' id='viaje_tree_view'>
+      <field name="name">viaje.tree</field>
+      <field name="model">flotas.viaje</field>
+        <field name="arch" type="xml">
+            <tree string="Viaje Tree">
+              <field name="fecha"/>
+              <field name="duracionhoras"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model='ir.ui.view' id='viaje_calendar_view'>
+      <field name="name">viaje.calendar</field>
+      <field name="model">flotas.viaje</field>
+        <field name="arch" type="xml">
+            <calendar string="Viaje Calendar">
+              <field name="fecha"/>
+              <field name="duracionhoras"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Top menu item -->
+    
+    <menuitem name="flotas" id="flotas.menu_root"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Menu" id="flotas.menu" parent="flotas.menu_root"/>
+   
+    <!-- actions -->
+    
+    <menuitem name="Conductor" id="flotas.menu_conductor" parent="flotas.menu"
+              action="flotas.action_conductor"/>
+    <menuitem name="Provincia" id="flotas.menu_provincia" parent="flotas.menu"
+              action="flotas.action_provincia"/>
+    <menuitem name="Seguro" id="flotas.menu_seguro" parent="flotas.menu"
+              action="flotas.action_seguro"/>
+    <menuitem name="Vehiculo" id="flotas.menu_vehiculo" parent="flotas.menu"
+              action="flotas.action_vehiculo"/>
+    <menuitem name="Viaje" id="flotas.menu_viaje" parent="flotas.menu"
+              action="flotas.action_viaje"/>
+
+  </data>
+</odoo>

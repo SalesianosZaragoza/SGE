@@ -1,0 +1,26 @@
+<odoo>
+
+    <record model="vinoteca.bodega" id="b1">
+        <field name="name">Bodega 1</field>
+        <field name="description">Esta es la bodega numero 1</field>
+    </record>
+    <record model="vinoteca.bodega" id="b2">
+        <field name="name">Bodega 2</field>
+        <field name="description">Esta es la bodega numero 2</field>
+    </record>
+    <record model="vinoteca.bodega" id="b3">
+        <field name="name">Bodega 3</field>
+        <field name="description">Esta es la bodega numero 3</field>
+    </record>
+
+    <record model="vinoteca.cliente" id="c1">
+        <field name="name">Cliente 1</field>
+    </record>
+    <record model="vinoteca.cliente" id="c2">
+        <field name="name">Cliente 2</field>
+    </record>
+    <record model="vinoteca.cliente" id="c3">
+        <field name="name">Cliente 3</field>
+    </record>
+
+</odoo>

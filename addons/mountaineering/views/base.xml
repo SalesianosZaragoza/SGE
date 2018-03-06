@@ -1,0 +1,94 @@
+<odoo>
+
+  <record model="ir.actions.act_window" id="mountaineering.action_montana">
+    <field name="name">montana</field>
+    <field name="res_model">mountaineering.montana</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record model='ir.ui.view' id='montana_tree_view'>
+    <field name="name">montana.tree</field>
+    <field name="model">mountaineering.montana</field>
+    <field name="arch" type="xml">
+      <tree string="montana">
+        <field name="nombre"/>
+        <field name="dificultad"/>
+        <field name="idescalador"/>
+        <field name="idascenso"/>
+        <field name="idcompania"/>
+        <field name="idmontana"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.actions.act_window" id="mountaineering.action_escalador">
+    <field name="name">escalador</field>
+    <field name="res_model">mountaineering.escalador</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record model='ir.ui.view' id='escalador_tree_view'>
+    <field name="name">escalador.tree</field>
+    <field name="model">mountaineering.escalador</field>
+    <field name="arch" type="xml">
+      <tree string="escalador">
+        <field name="dni"/>
+        <field name="idmontana"/>
+        <field name="idescalador"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.actions.act_window" id="mountaineering.action_compania">
+    <field name="name">compania</field>
+    <field name="res_model">base.empresa</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record model="ir.actions.act_window" id="mountaineering.action_ascenso">
+    <field name="name">ascenso</field>
+    <field name="res_model">mountaineering.ascenso</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record model='ir.ui.view' id='ascenso_tree_view'>
+    <field name="name">ascenso.tree</field>
+    <field name="model">mountaineering.ascenso</field>
+    <field name="arch" type="xml">
+      <tree string="ascenso">
+        <field name="idmontana"/>
+        <field name="provincia"/>
+        <field name="fecha"/>
+        <field name="metros"/>
+        <field name="mayorochomilmetros"/>
+        <field name="idascenso"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.actions.act_window" id="mountaineering.action_provincia">
+    <field name="name">provincia</field>
+    <field name="res_model">mountaineering.provincia</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record model='ir.ui.view' id='provincia_tree_view'>
+    <field name="name">provincia.tree</field>
+    <field name="model">mountaineering.provincia</field>
+    <field name="arch" type="xml">
+      <tree string="provincia">
+        <field name="nombre"/>
+      </tree>
+    </field>
+  </record>
+
+  <menuitem name="mountaineering" id="mountaineering.menu_root"/>
+  <menuitem name="Menu" id="mountaineering.menu" parent="mountaineering.menu_root"/>
+
+  <menuitem name="Montaña" id="mountaineering.menu_montana" parent="mountaineering.menu" action="mountaineering.action_montana"/>
+  <menuitem name="Escalador" id="mountaineering.menu_escalador" parent="mountaineering.menu" action="mountaineering.action_escalador"/>
+  <menuitem name="Compañia" id="mountaineering.menu_compania" parent="mountaineering.menu" action="mountaineering.action_compania"/>
+  <menuitem name="Ascenso" id="mountaineering.menu_ascenso" parent="mountaineering.menu" action="mountaineering.action_ascenso"/>
+  <menuitem name="Provincia" id="mountaineering.menu_provincia" parent="mountaineering.menu" action="mountaineering.action_provincia"/>
+
+</odoo>
