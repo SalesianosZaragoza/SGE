@@ -1,7 +1,7 @@
 # mi primer if
 
-variable = 0;
-print variable;
+variable = 0
+print variable
 
 if variable == 0:
     print "soy un cero"
@@ -12,7 +12,7 @@ else :
 
 a = ['Mary', 'tenia', 'un', 'corderito']
 for i in range(len(a)):
-    print i, a[i];
+    print i, a[i]
 
 indice = 30
 step = 10
@@ -26,8 +26,8 @@ for i in a[0:2]:
 
 
 tuplasSi = ('s', 'S', 'si', 'Si', 'SI')
-tuplasNo = ('n', 'no', 'No', 'NO');
-tuplasPuede = ('puede', 'posiblemente', 'quizas');
+tuplasNo = ('n', 'no', 'No', 'NO')
+tuplasPuede = ('puede', 'posiblemente', 'quizas')
 ok = 'no';
 if (ok in tuplasSi or ok in tuplasPuede):
     print "Aqui no se encuentra"
@@ -35,4 +35,4 @@ if ok in tuplasNo:
     print "Aqui se ha encontrado"
 
 #while True:
-#    pass
+#   pass
