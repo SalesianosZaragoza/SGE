@@ -1,5 +1,5 @@
 frutafresca = ['  banana', '  mora de Logan ', 'maracuya  ']
-[arma.strip() for arma in frutafresca]
+print [arma.strip() for arma in frutafresca]
 vec = [2, 4, 6]
 print [3*x for x in vec]
 print [3*x for x in vec if x > 3]

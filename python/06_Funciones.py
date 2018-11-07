@@ -9,7 +9,7 @@ def sumatory(param1=defaultVarForParam1, param2=defaultVarForParam2):
 integer1 = 3;
 integer2 = 4;
 sumatory(integer1, integer2)
-a, b = sumatory();
+a, b = sumatory();#  (1, 2)
 print a
 print b
 c = sumatory();
@@ -19,8 +19,9 @@ sumatory(param2=integer1)
 
 # Los valores por omision son evaluados
 # en el momento de la definicion
-# de la funcion,
-# en el ambito de la definicion, entonces:
+# de la funcion y es sólo válido
+# en el ambito de la definicion de la misma 
+# (función), entonces:
 i = 5
 
 def f(number=i):
@@ -29,11 +30,14 @@ def f(number=i):
 i = 6
 f()
 
-# Advertencia importante: El valor por omision es evaluado solo una vez. Existe una diferencia cuando el valor por
-#omision es un objeto mutable como una lista,
+# Advertencia importante: El valor por omision 
+# es evaluado solo una vez. 
+# Existe una diferencia cuando el valor por
+# omision es un objeto mutable como una lista,
 # diccionario, o instancia de la
 # mayoria de las clases. Por ejemplo,
-# la siguiente función acumula los argumentos que se le
+# la siguiente función acumula 
+# los argumentos que se le
 # pasan en subsiguientes llamadas:
 
 def f1(a, L=[]):
@@ -44,12 +48,17 @@ print f1(1)
 print f1(2)
 print f1(3)
 
-# Si no se quiere que el valor por omision sea compartido entre subsiguientes llamadas, se pueden escribir la función así:
+# Si no se quiere que el valor por omision 
+# sea compartido entre subsiguientes llamadas,
+#  se pueden escribir la función así:
 def f2(a, L=None):
     if L is None:
         L = []
     L.append(a)
     return L
+
+print f2(1)
+print f2(2)
 
 
 def ventadequeso(tipo, *argumentos, **palabrasclaves):
