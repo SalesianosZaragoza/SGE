@@ -1,4 +1,4 @@
-# -*- coding: iso-8859-1 -*-
+# -*- coding: utf-8 -*-
 
 def ventadequeso(tipo, *argumentos):
     print "-- ¿Tiene", tipo, "?"
@@ -7,5 +7,5 @@ def ventadequeso(tipo, *argumentos):
     for arg in argumentos:
         print arg
         
-ventadequeso("Kingurger", "Es muy liquido, sr.",
+ventadequeso("Kingurger", "Es muy líquido, sr.",
            1,"")

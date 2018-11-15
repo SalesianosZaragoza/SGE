@@ -14,9 +14,11 @@ class Abuelo:
     def sayName(self):
         print("soy el abuelo")
     pass
+class Abuela:
+    pass
 
 
-class ClassMother(Abuelo):
+class ClassMother(Abuela,Abuelo):
     def sayMama(self):
         print("Mama")
     funcion = sayMama

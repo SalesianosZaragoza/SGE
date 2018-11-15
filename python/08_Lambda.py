@@ -3,9 +3,10 @@ l = [1, 2, 3, 4]
 
 def cuadrado(n):    return n ** 2
 l2 = map(cuadrado, l)
+   
 
 def raiz(n):    return math.sqrt(n)
-l2 = map(cuadrado, l)
+l2 = map(raiz, l)
 
 def es_par(n):    
     return (n % 2.0 == 0)
@@ -16,6 +17,7 @@ def sumar(x, y):
     return sum    
     
 l2 = reduce(sumar, map(cuadrado, l))
+print(l2)
 l2 = reduce(sumar, map(raiz, l))
 def sumAndPow2(l):
     sum = 0
@@ -56,6 +58,5 @@ def mi_decorador(funcion):
 
 def imp(arg):
     print arg
-
 
 mi_decorador(imp)("hola")
