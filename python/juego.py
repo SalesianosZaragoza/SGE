@@ -38,6 +38,6 @@ class Personaje(Jugador):
 
 
 
-newpj = Personaje("Pedro", 10, "patada", 5, 0.9)
+__newpj = Personaje("Pedro", 10, "patada", 5, 0.9)
 
-print newpj._vida
+print(__newpj._vida)

@@ -7,11 +7,11 @@ class MyException:
 if True:
     try:
         raise MyException("Decir adios")
-    except (MyException, RuntimeError):
-        print 'error'
+    except (MyException,RuntimeError):
+        print ("error")
         # raise MyException("Decir sayonara")
     finally:
-        print "hacer siempre"
+        print ("hacer siempre")
 
 
 class MiError(Exception):
@@ -24,22 +24,26 @@ class MiError(Exception):
 try:
     raise MiError(2 * 2)
 except MiError as e:
-    print u'Ocurrio mi excepcion, valor:', e.valor
-raise MiError(2 * 2)
+    print(u"Ocurrio mi excepcion, valor:", e.valor)
 
-class Erzror(Exception):
+#raise MiError(2 * 2)
+
+class Error(Exception):
     """Clase base para excepciones en el modulo."""
     pass
 
-class EntzradaError(Error):
-    """Exczepcion lanzada por errores en las entradas.
+class EntradaError(Error):
+    """Excepcion lanzada por errores en las entradas.
 
     Atributos:
         expresion -- expresion de entrada en la que ocurre el error
         mensaje -- explicacion del error
     """
 
-    def __iznit__(self, expresion, mensaje):
+    def __init__(self, expresion, mensaje):
         self.expresion = expresion
         self.mensaje = mensaje
+
+raise EntradaError("una expresion","un mensaje")
+
 
