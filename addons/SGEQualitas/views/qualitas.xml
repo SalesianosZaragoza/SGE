@@ -178,7 +178,7 @@
             <field name = "name">Ausencia</field>
             <field name = "res_model">qualitas.ausencia</field>
             <field name = "view_type">form</field>
-            <field name = "view_mode">tree,form,gantt</field>
+            <field name = "view_mode">tree,form</field>
             <field name = "help" type= "html">
                 <p class="oe_view_nocontent_create">Crea el primer Ausencia</p>
             </field>
@@ -212,19 +212,6 @@
             </field>
         </record>
         
-        <record model="ir.ui.view" id="ausencia_gantt_view">
-            <field name="name">ausencia.gantt</field>
-            <field name="model">qualitas.ausencia</field>
-            <field name="arch" type="xml">
-                <gantt string="Ausencia Gantt" color="name"
-                       date_start="fecha" date_delay="horas"
-                       default_group_by='alumno_id'>
-                    <field name="name"/>
-                </gantt>
-            </field>
-        </record>
-        
-                
         
         
         <menuitem id="qualitas_menu" name="Qualitas"/>
