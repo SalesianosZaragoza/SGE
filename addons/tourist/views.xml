@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openerp>
-  <data>
+<odoo>
 
     <record model="ir.actions.act_window" id="visit_list_action">
         <field name="name">visit</field>
         <field name="res_model">touring.visit</field>
-        <field name="type">ir.actions.act_window</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form,calendar</field>
     </record>
@@ -201,7 +198,6 @@
                 </tree>
             </field>
         </record>
-
        
 
         <record model="ir.ui.view" id="visit_search_view">
@@ -216,9 +212,5 @@
                 </search>
             </field>
         </record>
-        
-
-
                   
-  </data>
-</openerp>
+</odoo>

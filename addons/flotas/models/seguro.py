@@ -4,7 +4,7 @@ from odoo import models, fields, api
 from datetime import timedelta,date,datetime
 
 class seguro(models.Model):
-    _inherit = 'base.empresa'
+    _name = 'flotas.seguro'
 
     name = fields.Char(string='nombre', required=True, help='nombre de la compañia')
     fechadevencimiento = fields.Date(string='fecha de vencimiento', required=True)

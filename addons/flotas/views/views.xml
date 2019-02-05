@@ -115,7 +115,7 @@
         <form string="Vehiculo Form">
             <field name="marca" />
             <field name="color" />
-            <field name="asientos" />
+            <field name="numasientos" />
           </form>                
         </field>
     </record>
@@ -127,7 +127,7 @@
         <tree string="Vehiculo Tree">
             <field name="marca" />
             <field name="color" />
-            <field name="asientos" />
+            <field name="numasientos" />
         </tree>
       </field>
     </record>
@@ -145,7 +145,6 @@
       <field name="model">flotas.viaje</field>    
       <field name="arch" type="xml">
         <form string="Viaje Form">
-            <field name="fecha" />
             <field name="duracionhoras" />
           </form>                
         </field>
@@ -156,7 +155,6 @@
       <field name="model">flotas.viaje</field>
         <field name="arch" type="xml">
             <tree string="Viaje Tree">
-              <field name="fecha"/>
               <field name="duracionhoras"/>
             </tree>
         </field>
@@ -167,7 +165,6 @@
       <field name="model">flotas.viaje</field>
         <field name="arch" type="xml">
             <calendar string="Viaje Calendar">
-              <field name="fecha"/>
               <field name="duracionhoras"/>
             </calendar>
         </field>

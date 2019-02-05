@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 class Provincia(models.Model):
     _name = 'touring.provincia'
@@ -46,14 +45,6 @@ class Visit(models.Model):
             self.duration = (end - start).days + 1      
 
 
-    @api.depends('start_date', 'end_date')
-    def _duration(self):
-        for r in self:
-            if (r.end_date and r.start_date):
-                start = fields.Datetime.from_string(r.start_date)
-                end = fields.Datetime.from_string(r.end_date)
-                r.duration = (end - start).days + 1      
-                continue
  
 
    

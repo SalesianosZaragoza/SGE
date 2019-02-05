@@ -12,6 +12,6 @@ class vehiculo(models.Model):
     # Varios coche varios conductores
     conductores_ids = fields.Many2many('flotas.conductor', string="conductor")
     # Un coche varios viajes
-    viajes_ids = fields.One2many('flotas.viaje', string="viajes")
+    viajes_ids = fields.One2many('flotas.viaje','vehiculo_id', string="viajes")
     #fecharevision = 
     seguro_ids = fields.Many2one('flotas.seguro', string="viajes")
