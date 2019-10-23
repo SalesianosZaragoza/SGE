@@ -3,17 +3,17 @@ lista = []
 for n in range(0,10):
 	lista.append(n)
 
-print lista
+print(lista)
 
 lista = [n for n in range(0,10)]
 
-print lista
+print(lista)
 print("cuadrados")
 cuadrados = [n * n for n in range(0, 10) ]
-print cuadrados
-cuadrados = [n * i for n in range(0, 10) 
-			for i in range(0, 10)]
-print cuadrados
+print(cuadrados)
+cuadrados = [n + i for n in range(0, 10) 
+			for i in range(40, 50)]
+print(cuadrados)
 
 
 
@@ -31,21 +31,21 @@ for i in range(0, 3):
 
 print("lista creada")
 for lista in array2D:
-	print lista
+	print(lista)
 
 array2D = [
 	[j + (i*3) + 1 for j in range(0,3)] 
 	for i in range(0,3)]
 
-print array2D
+print(array2D)
 
-orignal = [range(0, 9)]
+orignal = [i for i in range(0, 9)]
 
-print orignal
+print(orignal)
 
 copia = list(orignal)
 
 orignal[0] = "hola"
-print orignal
-print copia
+print(orignal)
+print(copia)
 

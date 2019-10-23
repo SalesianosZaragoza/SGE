@@ -15,7 +15,7 @@ print(variable);
 print(seno);
 
 
-variable = False;
+variable = False;#True
 print(variable);
 
 # asignacion multiple

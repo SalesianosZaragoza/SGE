@@ -1,4 +1,3 @@
-'''
 emptyTuple = ()
 emptyTuple = tuple()
 
@@ -7,17 +6,15 @@ singleItemTuple = ("spam",)  # fijarse en la coma
 print(singleItemTuple)
 
 print(singleItemTuple[0])
-'''
 
+#print(singleItemTuple[1])
 
-#print singleItemTuple[1]
-'''
 mytuple1 = 12, 89, 'a'
 mytuple2 = (13, 14, 'a')
 mytuple3 = mytuple1 + mytuple2
 print(mytuple3)
 print(mytuple3 * 5)
-'''
+
 
 # trabajando con listas
 a = ['pan', 'huevos', 100, 1234]
@@ -33,6 +30,7 @@ print(matrix)
 # A  diferencia de las cadenas de texto,
 # que son inmutables, es posible cambiar
 # un elemento individual de una lista:
+
 a = ['pan', 'huevos', 100, 1234]
 a[2] = a[2] + 23
 print(a[2])
@@ -55,18 +53,19 @@ print(a)
 
 
 thelist = [5, 3, 'p', 9, 'e']
-print thelist[0]
-print thelist[4]
-# print thelist[5] lanza una excepcion
-print thelist[-1]
-print thelist[-2]
+#print thelist[0]
+#print thelist[4]
+#print(thelist[5]) #lanza una excepcion
+print(thelist[-1])
+print(thelist[-2])
 
 
 
 # trabajando con diccionarios
-emptyDict = {}
+emptyDict = {} #dict()
 thisdict = {'a':1, 'b':23, 'c':"eggs"}
 del thisdict['b']
-print thisdict;
+print(thisdict)
+print(thisdict['c'])
 
 
