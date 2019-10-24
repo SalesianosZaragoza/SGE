@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-from . import models
-from . import fields
+from odoo import models
+from odoo import fields
