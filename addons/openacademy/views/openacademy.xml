@@ -6,8 +6,6 @@
             <field name="name">course.form</field>
             <field name="model">openacademy.course</field>
             <field name="arch" type="xml">
-               <!--
-
                 <form string="Course Form">
                     <sheet>
                         <group>
@@ -16,7 +14,6 @@
                         </group>
                     </sheet>
                 </form>
-               -->
             </field>
         </record>
 
