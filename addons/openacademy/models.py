@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from odoo import models, fields
+from odoo import fields, models
 
 class Course(models.Model):
     _name = 'openacademy.course'
@@ -16,3 +15,6 @@ class Session(models.Model):
     start_date = fields.Date()
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     seats = fields.Integer(string="Number of seats")
+    
+    
+    
