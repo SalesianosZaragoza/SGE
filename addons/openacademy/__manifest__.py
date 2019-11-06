@@ -21,6 +21,8 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
+    # debo añadir la referncia a baseModule
+    #'depends': ['base','baseModule'],
     'depends': ['base'],
 
     # always loaded
