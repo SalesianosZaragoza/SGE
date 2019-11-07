@@ -6,7 +6,6 @@ class Heredar(models.Model):
     #se almacena en una tabla nueva que se llamara
     #openacademy heredar
     _name='openacademy.heredar'
-    _inherit='base.empresa'
     codigoPostal=fields.Char(string="codigo postal")
 
 class Extender(models.Model):

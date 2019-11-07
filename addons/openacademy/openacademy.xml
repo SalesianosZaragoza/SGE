@@ -1,6 +1,18 @@
 <odoo>
 
-    <record id="idea_category_list2" model="ir.ui.view">
+    <record id="openacademy_extender_tree" model="ir.ui.view">
+    <field name="name">openacademy.extender.tree</field>
+    <field name="model">base.empresa</field>
+    <field name="inherit_id" ref="baseModule.empresa_tree_view"/>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="nombreEmpresa" string="empresaRepetido"/>
+            <field name="dni" string="dni"/>
+        </tree>
+    </field>
+    </record>
+
+    <record id="openacademy_extender_form" model="ir.ui.view">
     <field name="name">openacademy.extender.form</field>
     <field name="model">base.empresa</field>
     <field name="inherit_id" ref="baseModule.empresa_form_view"/>
