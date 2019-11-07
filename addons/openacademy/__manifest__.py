@@ -22,9 +22,8 @@
 
     # any module necessary for this one to work correctly
     # debo añadir la referncia a baseModule
-    #'depends': ['base','baseModule'],
-    'depends': ['base'],
-
+    'depends': ['base','baseModule'],
+    
     # always loaded
     'data': [
         'security/ir.model.access.csv',
