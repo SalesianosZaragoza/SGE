@@ -7,20 +7,52 @@
     <field name="arch" type="xml">
         <tree>
             <field name="nombreEmpresa" string="empresaRepetido"/>
-            <field name="dni" string="dni"/>
+            <!--<field name="dni" string="dni"/>-->
         </tree>
     </field>
     </record>
+
+     <record model="ir.ui.view" id="session_calendar_view">
+        <field name="name">session.calendar</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <calendar string="Session Calendar" date_start="start_date" date_stop="end_date">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="num_unidades"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="session_search_view">
+        <field name="name">session.search</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="seats"/>
+                <!-- <filter name="my_courses" string="My Courses"
+                        domain="[('responsible_id', '=', uid)]"/>
+                <group string="Group By">
+                    <filter name="by_responsible" string="Responsible"
+                            context="{'group_by': 'responsible_id'}"/>
+                </group> -->
+            </search>
+        </field>
+    </record>
+
+
 
     <record id="openacademy_extender_form" model="ir.ui.view">
     <field name="name">openacademy.extender.form</field>
     <field name="model">base.empresa</field>
     <field name="inherit_id" ref="baseModule.empresa_form_view"/>
     <field name="arch" type="xml">
-        <!-- find field description and add the field
-             idea_ids after it -->
         <xpath expr="//field[@name='nombreEmpresa']" position="after">
+        <!-- find field description and add the field
+             idea_ids after it 
           <field name="dni" string="Dni"/>
+             -->
         </xpath>
     </field>
     </record>
@@ -60,7 +92,7 @@
             <field name="name">Sessions</field>
             <field name="res_model">openacademy.session</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar</field>
         </record>
 
         <menuitem id="session_menu" name="Sessions"
