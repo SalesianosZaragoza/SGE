@@ -29,8 +29,8 @@ class Session(models.Model):
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     name = fields.Char(required=True)
     seats = fields.Integer(string="Number of seats")
-    aleatorio = fields.Char(required=True)
-    email = fields.Char(required=True, compute='_random')
+    aleatorio = fields.Char()
+    email = fields.Char(compute='_random')
     precio = fields.Integer()
     num_unidades = fields.Integer()
     total = fields.Integer(compute='_total')
@@ -69,15 +69,14 @@ class Session(models.Model):
 
 
     # onchange handler
-    @api.onchange('email')
+    @api.onchange('precio')
     def cambio_de_precio(self):
         # set auto-changing field
-        print(self.email)
-        if self.email.str.find("@") == -1:
+        if self.precio < 0:
         # Can optionally return a warning and domains
             return {
                 'warning': {
-                    'title': "email not valid",
-                    'message': "email no valido"
+                    'title': "price not valid",
+                    'message': "precio no valido"
                 }
             }
