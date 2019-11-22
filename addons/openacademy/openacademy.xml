@@ -16,7 +16,7 @@
         <field name="name">session.calendar</field>
         <field name="model">openacademy.session</field>
         <field name="arch" type="xml">
-            <calendar string="Session Calendar" date_start="start_date" date_stop="end_date">
+            <calendar string="Session Calendar" event_open_popup="true" date_start="start_date" date_stop="end_date" quick_add="False">
                 <field name="name"/>
                 <field name="email"/>
                 <field name="num_unidades"/>

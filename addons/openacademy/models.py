@@ -25,7 +25,6 @@ class Session(models.Model):
     _name = 'openacademy.session'
     _description = "OpenAcademy Sessions"
 
-    start_date = fields.Date()
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     name = fields.Char(required=True)
     seats = fields.Integer(string="Number of seats")
@@ -60,7 +59,7 @@ class Session(models.Model):
     @api.multi
     def _random(self):
         for record in self:
-            record.aleatorio = str(random.randint(1, 1e6))
+            record.email = str(random.randint(1, 1e6))
 
     @api.depends('precio', 'num_unidades')
     def _total(self):
