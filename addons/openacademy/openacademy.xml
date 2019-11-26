@@ -44,18 +44,30 @@
 
 
     <record id="openacademy_extender_form" model="ir.ui.view">
-    <field name="name">openacademy.extender.form</field>
-    <field name="model">base.empresa</field>
-    <field name="inherit_id" ref="baseModule.empresa_form_view"/>
-    <field name="arch" type="xml">
-        <xpath expr="//field[@name='nombreEmpresa']" position="after">
-        <!-- find field description and add the field
-             idea_ids after it 
-          <field name="dni" string="Dni"/>
-             -->
-        </xpath>
-    </field>
+        <field name="name">openacademy.extender.form</field>
+        <field name="model">base.empresa</field>
+        <field name="inherit_id" ref="baseModule.empresa_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='nombreEmpresa']" position="after">
+            <!-- find field description and add the field
+                idea_ids after it 
+            <field name="dni" string="Dni"/>
+                -->
+            </xpath>
+        </field>
     </record>
+
+      <record id="openacademy_extender_form" model="ir.ui.view">
+        <field name="name">openacademy.heredar.form</field>
+        <field name="model">openacademy.heredar</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="nombreEmpresa" string="Nombre Empresa"/>
+                <field name="codigoPostal" string="Codigo Postal"/>
+            </form>
+        </field>
+    </record>
+
 
 
     <record model="ir.actions.act_window" id="heredar_list_action">

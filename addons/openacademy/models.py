@@ -68,10 +68,10 @@ class Session(models.Model):
 
 
     # onchange handler
-    @api.onchange('precio')
+    @api.onchange('precio','num_unidades')
     def cambio_de_precio(self):
         # set auto-changing field
-        if self.precio < 0:
+        if self.precio < 0 or self.num_unidades < 0:
         # Can optionally return a warning and domains
             return {
                 'warning': {
@@ -79,3 +79,5 @@ class Session(models.Model):
                     'message': "precio no valido"
                 }
             }
+        else :
+            self.total = self.precio * self.num_unidades
