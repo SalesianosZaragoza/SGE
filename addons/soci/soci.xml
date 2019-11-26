@@ -85,6 +85,7 @@
         <field name="arch" type="xml">
             <tree string="Listado de eventos">
                 <field name="name" />
+                <field name="description" />
                 <field name="empleado_id" />
                 <field name="start_date" />
                 <field name="end_date" />
@@ -210,8 +211,9 @@
         <field name="name">event.tree</field>
         <field name="model">soci.event</field>
         <field name="arch" type="xml">
-            <tree string="Listado de visitas">
+            <tree string="Listado de eventos">
                 <field name="start_date"/>
+                <field name="description" />
                 <field name="end_date"/>
                 <field name="duration"/>
                 <field name="empleado_id"/>
