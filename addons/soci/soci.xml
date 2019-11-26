@@ -13,7 +13,7 @@
             </tree>
         </field>
     </record>
-    
+
     <record model="ir.actions.act_window" id="poblacion_list_action">
         <field name="name">poblacion</field>
         <field name="res_model">soci.poblacion</field>
@@ -26,7 +26,7 @@
             </tree>
         </field>
     </record>
-    
+
     <record model="ir.actions.act_window" id="cliente_list_action">
         <field name="name">cliente</field>
         <field name="res_model">soci.cliente</field>
@@ -43,16 +43,16 @@
             </tree>
         </field>
     </record>
-    
- 
-    
+
+
+
     <record model="ir.actions.act_window" id="weed_list_action">
         <field name="name">weed</field>
         <field name="res_model">soci.weed</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="arch" type="xml">
-            <tree string="Listado de eventos">
+            <tree string="Listado de weeds">
                 <field name="name" />
                 <field name="cliente_id" />
                 <field name="weed_id"/>
@@ -62,13 +62,13 @@
             </tree>
         </field>
     </record>
-      <record model="ir.actions.act_window" id="empleado_list_action">
+    <record model="ir.actions.act_window" id="empleado_list_action">
         <field name="name">empleado</field>
         <field name="res_model">soci.empleado</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="arch" type="xml">
-            <tree string="Listado de eventos">
+            <tree string="Listado de empleados">
                 <field name="name" />
                 <field name="cliente_id" />
                 <field name="empleado_id"/>
@@ -76,110 +76,157 @@
             </tree>
         </field>
     </record>
-    
-    
+
+    <record model="ir.actions.act_window" id="event_list_action">
+        <field name="name">eventos</field>
+        <field name="res_model">soci.event</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de eventos">
+                <field name="name" />
+                <field name="empleado_id" />
+                <field name="start_date" />
+                <field name="end_date" />
+                <field name="duration"/>
+            </tree>
+        </field>
+    </record>
+
 
     <menuitem name="Weed Club" id="soci_menu_root"/>
-    
+
     <menuitem name="Provincias" id="soci_menu_provincias" parent="soci_menu_root"/>
     <menuitem name="Poblaciones" id="soci_menu_poblaciones" parent="soci_menu_root"/>
     <menuitem name="Cliente" id="soci_menu_cliente" parent="soci_menu_root"/>
     <menuitem name="Empleado" id="soci_menu_empleado" parent="soci_menu_root"/>
     <menuitem name="Weed" id="soci_menu_weed" parent="soci_menu_root"/>
-    
-    
-    <menuitem name="listado de provincias" id="soci_list_provincias" parent="soci_menu_provincias"
-              action="provincia_list_action"/>
-    <menuitem name="listado de poblaciones" id="soci_list_poblaciones" parent="soci_menu_poblaciones"
-              action="poblacion_list_action"/>
-    <menuitem name="listado de cliente" id="soci_list_cliente" parent="soci_menu_cliente"
-              action="cliente_list_action"/>
-    <menuitem name="listado de empleado" id="soci_list_empleado" parent="soci_menu_empleado"
-              action="empleado_list_action"/>
-    <menuitem name="listado de weeds" id="touring_list_weed" parent="soci_menu_weed"
-              action="weed_list_action"/>
-    
-        
-        
-        
-        <record model="ir.ui.view" id="provincia_form_view">
-            <field name="name">provincia.form</field>
-            <field name="model">soci.provincia</field>
+    <menuitem name="Eventos" id="soci_menu_event" parent="soci_menu_root"/>
+
+    <menuitem name="listado de provincias" id="soci_list_provincias" parent="soci_menu_provincias" action="provincia_list_action"/>
+    <menuitem name="listado de poblaciones" id="soci_list_poblaciones" parent="soci_menu_poblaciones" action="poblacion_list_action"/>
+    <menuitem name="listado de cliente" id="soci_list_cliente" parent="soci_menu_cliente" action="cliente_list_action"/>
+    <menuitem name="listado de empleado" id="soci_list_empleado" parent="soci_menu_empleado" action="empleado_list_action"/>
+    <menuitem name="listado de weeds" id="soci_list_weed" parent="soci_menu_weed" action="weed_list_action"/>
+    <menuitem name="listado de eventos" id="soci_list_event" parent="soci_menu_event" action="event_list_action"/>
+
+
+
+
+    <record model="ir.ui.view" id="provincia_form_view">
+        <field name="name">provincia.form</field>
+        <field name="model">soci.provincia</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de provincias">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="poblacion_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="poblacion_form_view">
+        <field name="name">poblacion.form</field>
+        <field name="model">soci.poblacion</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de poblaciones">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="provincia_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cliente_form_view">
+        <field name="name">cliente.form</field>
+        <field name="model">soci.cliente</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de cliente">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="empleado_id"/>
+                        <field name="weed_id"/>
+                        <field name="gramos" />
+                        <field name = "fechaIncorporacion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="empleado_form_view">
+        <field name="name">empleado.form</field>
+        <field name="model">soci.empleado</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de empleados">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="cliente_id"/>
+                        <field name="nombreEntidad"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="weed_form_view">
+        <field name="name">weed.form</field>
+        <field name="model">soci.weed</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de weed">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="sativa" />
+                        <field name="indica" />
+                        <field name="gramos" />
+                        <field name="cliente_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="event_calendar_view">
+        <field name="name">event.calendar</field>
+        <field name="model">soci.event</field>
+        <field name="arch" type="xml">
+            <calendar string="Calendario de visitas" date_start="start_date" date_stop="end_date">
+                <field name="empleado_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="duration"/>
+                <field name="empleado_id"/>
+            </calendar>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="event_tree_view">
+        <field name="name">event.tree</field>
+        <field name="model">soci.event</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de visitas">
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="duration"/>
+                <field name="empleado_id"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="event_search_view">
+            <field name="name">event.search</field>
+            <field name="model">soci.event</field>
             <field name="arch" type="xml">
-                <form string="Formulario de provincias">
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="poblacion_id"/>
-                        </group>
-                    </sheet>
-                </form>
+                <search>
+                    <field name="empleado_id"/>
+
+                </search>
             </field>
-        </record>
-        
-        <record model="ir.ui.view" id="poblacion_form_view">
-            <field name="name">poblacion.form</field>
-            <field name="model">soci.poblacion</field>
-            <field name="arch" type="xml">
-                <form string="Formulario de poblaciones">
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="provincia_id"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-              
-        <record model="ir.ui.view" id="cliente_form_view">
-            <field name="name">cliente.form</field>
-            <field name="model">soci.cliente</field>
-            <field name="arch" type="xml">
-                <form string="Formulario de cliente">
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="empleado_id"/>
-                            <field name="weed_id"/>
-                            <field name="gramos" />
-                            <field name = "fechaIncorporacion"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-         <record model="ir.ui.view" id="empleado_form_view">
-            <field name="name">empleado.form</field>
-            <field name="model">soci.empleado</field>
-            <field name="arch" type="xml">
-                <form string="Formulario de empleados">
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="cliente_id"/>
-                            <field name="nombreEntidad"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-         <record model="ir.ui.view" id="weed_form_view">
-            <field name="name">weed.form</field>
-            <field name="model">soci.weed</field>
-            <field name="arch" type="xml">
-                <form string="Formulario de weed">
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="sativa" />
-                            <field name="indica" />
-                            <field name="gramos" />
-                            <field name="cliente_id" />
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>         
-                  
+    </record>
 </odoo>
