@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record model="ir.ui.view" id="course_form_view">
+            <field name="name">Equipos vista incial</field>
+            <field name="model">equipo.modelo</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <!-- <field name="description"/> -->
+                            <field name="responsible_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="Jugadores">
+                                <field name="jugadores_ids">
+                                    <tree string="Jugadores en el equipo">
+                                        <field name="name"/>
+                                        <field name="scored_goals"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="course_list_action">
+            <field name="name">Equipos</field>
+            <field name="res_model">equipo.modelo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <record model="ir.ui.view" id="course_search_view">
+            <field name="name">equipo.search</field>
+            <field name="model">equipo.modelo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <group string="Group By">
+                        <filter name="by_responsible" string="Entrenador"
+                                context="{'group_by': 'responsible_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="jugador_search_view">
+            <field name="name">jugador.search</field>
+            <field name="model">jugador.modelo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <group string="Group By">
+                        <filter name="by_team" string="Equipo"
+                                context="{'group_by': 'equipo_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_form_view">
+            <field name="name">Jugadores vista</field>
+            <field name="model">jugador.modelo</field>
+            <field name="arch" type="xml">
+                <form string="Session Form">
+                    <sheet>
+                        <group>
+                            <group string="Datos">
+                                <field name="name"/>
+                                <field name="equipo_id"/>
+                                <!-- <field name="instructor_id"/> -->
+                                <field name="active"/>
+                            </group>
+                            <group string="Datos extra">
+                                <field name="start_date"/>
+                                <field name="duration"/>
+                                <field name="goals"/>
+                                <field name="scored_goals" widget="progressbar"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_tree_view">
+            <field name="name">jugador.tree</field>
+            <field name="model">jugador.modelo</field>
+            <field name="arch" type="xml">
+                <tree string="Jugador Tree">
+                    <field name="name"/>
+                    <field name="equipo_id"/>
+                    <field name="goals"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">Equipo vista tree</field>
+            <field name="model">equipo.modelo</field>
+            <field name="arch" type="xml">
+                <tree string="Equipo Tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="responsible_id"/>
+                    <field name="jugadores_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_gantt_view">
+            <field name="name">session.gant
+            t</field>
+            <field name="model">jugador.modelo</field>
+            <field name="arch" type="xml">
+                <gantt string="Jugador Gantt"
+                       date_start="start_date" date_delay="hours">
+                </gantt>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_calendar_view">
+            <field name="name">jugador.calendar</field>
+            <field name="model">jugador.modelo</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario del jugador" date_start="start_date">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="session_list_action">
+            <field name="name">Jugadores</field>
+            <field name="res_model">jugador.modelo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,gantt</field>
+        </record>
+
+
+        <menuitem id="main_futbol_menu" name="Futbol definitivo"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="futbol_menu" name="Menu"
+                  parent="main_futbol_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="prueba_menu" name="Equipos" parent="futbol_menu"
+                  action="course_list_action"/>
+        <menuitem id="segundo_menu" name="Jugadores"
+                  parent="futbol_menu"
+                  action="session_list_action"/>
+
+</odoo>
