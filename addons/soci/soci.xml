@@ -207,6 +207,15 @@
             </calendar>
         </field>
     </record>
+    <record model="ir.ui.view" id="client_calendar_view">
+        <field name="name">cliente.calendar</field>
+        <field name="model">soci.cliente</field>
+        <field name="arch" type="xml">
+            <calendar string="Calendario de inscripcion" date_start="fechaIncorporacion" date_stop="fechaIncorporacion">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
     <record model="ir.ui.view" id="event_tree_view">
         <field name="name">event.tree</field>
         <field name="model">soci.event</field>
