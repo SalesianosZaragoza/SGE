@@ -3,7 +3,7 @@
     'name': "flotas",
 
     'summary': """
-        Examen final""",
+        flotas""",
 
     'description': """
         Me gustaria poder aprobar esto

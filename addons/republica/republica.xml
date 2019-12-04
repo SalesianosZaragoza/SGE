@@ -1,0 +1,198 @@
+<odoo>
+
+
+    <record model="ir.actions.act_window" id="jedi_list_action">
+        <field name="name">jedi</field>
+        <field name="res_model">republica.jedi</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de Jedi">
+                <field name="nombreEntidad" />
+                <field name="sableLuz"/>
+                <field name="fechaVisto"/>
+                <field name="planeta_id"/>
+                <field name="midiclorianos"/>
+                <field name="nivel"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sith_list_action">
+        <field name="name">sith</field>
+        <field name="res_model">republica.sith</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de sith">
+                <field name="nombreEntidad" />
+                <field name="jedi_id"/>
+                <field name="raza_id"/>
+                <field name="rabia"/>
+                <field name="sableLuz"/>
+                <field name="usa2Sables"/>
+                <field name= "oscuridad"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="planeta_list_action">
+        <field name="name">planeta</field>
+        <field name="res_model">republica.planeta</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de Planetas">
+                <field name="name" />
+                <field name="jedi_id" />
+                <field name="destruido"/>
+                <field name = "fechaDestruido"/>
+                <field name = "raza_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="especie_list_action">
+        <field name="name">especie</field>
+        <field name="res_model">republica.especie</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de especies">
+                <field name="name" />
+                <field name="planeta_id" />
+            </tree>
+        </field>
+    </record>
+    <record model='ir.ui.view' id='jedi_tree_view'>
+        <field name="name">jedi.tree</field>
+        <field name="model">republica.jedi</field>
+        <field name="arch" type="xml">
+            <tree string="Jedi Tree">
+               <field name="nombreEntidad" />
+                <field name="sableLuz"/>
+                <field name="fechaVisto"/>
+                <field name="planeta_id"/>
+                <field name="midiclorianos"/>
+                <field name="nivel"/>
+            </tree>
+        </field>
+    </record>
+    <record model='ir.ui.view' id='sith_tree_view'>
+        <field name="name">sith.tree</field>
+        <field name="model">republica.sith</field>
+        <field name="arch" type="xml">
+            <tree string="Sith Tree">
+                <field name="nombreEntidad" />
+                <field name="jedi_id"/>
+                <field name="raza_id"/>
+                <field name="rabia"/>
+                <field name="sableLuz"/>
+                <field name="usa2Sables"/>
+                <field name="oscuridad"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem name="Republica" id="republica_menu_root"/>
+
+    <menuitem name="Jedi" id="republica_menu_jedi" parent="republica_menu_root"/>
+    <menuitem name="Sith" id="republica_menu_sith" parent="republica_menu_root"/>
+    <menuitem name="Planeta" id="republica_menu_planeta" parent="republica_menu_root"/>
+    <menuitem name="Especie" id="republica_menu_especie" parent="republica_menu_root"/>
+
+
+    <menuitem name="listado de jedi" id="republica_list_jedi" parent="republica_menu_jedi" action="jedi_list_action"/>
+    <menuitem name="listado de sith" id="republica_list_sith" parent="republica_menu_sith" action="sith_list_action"/>
+    <menuitem name="listado de planeta" id="republica_list_planeta" parent="republica_menu_planeta" action="planeta_list_action"/>
+    <menuitem name="listado de especia" id="republica_list_especie" parent="republica_menu_especie" action="especie_list_action"/>
+
+
+
+
+
+    <record model="ir.ui.view" id="jedi_form_view">
+        <field name="name">jedi.form</field>
+        <field name="model">republica.jedi</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de jedi">
+                <sheet>
+                    <group>
+                        <field name="nombreEntidad" />
+                        <field name="sableLuz"/>
+                        <field name="fechaVisto"/>
+                        <field name="planeta_id"/>
+                        <field name="midiclorianos"/>
+                        <field name="nivel"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sith_form_view">
+        <field name="name">sith.form</field>
+        <field name="model">republica.sith</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de sith">
+                <sheet>
+                    <group>
+                        <field name="nombreEntidad" />
+                        <field name="jedi_id"/>
+                        <field name="raza_id"/>
+                        <field name="rabia"/>
+                        <field name="sableLuz"/>
+                        <field name="usa2Sables"/>
+                        <field name="oscuridad"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="planeta_form_view">
+        <field name="name">planeta.form</field>
+        <field name="model">republica.planeta</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de planetas">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="jedi_id" />
+                        <field name="destruido"/>
+                        <field name = "fechaDestruido"/>
+                        <field name = "raza_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="planeta_calendar_view">
+        <field name="name">planeta.calendar</field>
+        <field name="model">republica.planeta</field>
+        <field name="arch" type="xml">
+            <calendar string="Calendario de planetas" date_start="start_date">
+                <field name="name"/>
+                <field name="destruido"/>
+
+            </calendar>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="especie_form_view">
+        <field name="name">especie.form</field>
+        <field name="model">republica.especie</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de especies">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="planeta_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
