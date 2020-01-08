@@ -16,6 +16,5 @@ def fib2(n):  # devuelve la serie Fibonacci hasta n
 
 if __name__ == "__main__":
     import sys
-    # fib(int(sys.argv[1]))
-    print(fib(33))
+    fib(int(sys.argv[1]))
     

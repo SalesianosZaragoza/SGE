@@ -1,5 +1,5 @@
 import math
-import functools
+from functools import reduce
 
 l = [1, 2, 3, 4]
 
@@ -18,9 +18,9 @@ def sumar(x, y):
     sum = x + y
     return sum    
     
-l2 = functools.reduce(sumar, map(cuadrado, l))
+l2 = reduce(sumar, map(cuadrado, l))
 print(l2)
-l2 = functools.reduce(sumar, map(raiz, l))
+l2 = reduce(sumar, map(raiz, l))
 print(l2)
 def sumAndPow2(l):
     sum = 0
