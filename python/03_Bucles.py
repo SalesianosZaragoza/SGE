@@ -22,7 +22,7 @@ for i in range(indice, 100, step):
 
 a = ['bruja','pikachu', 'xyzzy']
 for i in a[0:2]:
-    print(i,)
+    print(i, end=" ")
 
 
 tuplasSi = ('s', 'S', 'si', 'Si', 'SI')

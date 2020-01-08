@@ -24,5 +24,5 @@ print([[fila[i] for fila in mat] for i in [0, 1, 2]])
 
 for i in [0, 1, 2]:
     for fila in mat:
-        print(fila[i],)
+        print(fila[i])
     print
