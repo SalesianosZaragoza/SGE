@@ -1,4 +1,6 @@
 import math
+import functools
+
 l = [1, 2, 3, 4]
 
 def cuadrado(n):    return n ** 2
@@ -16,9 +18,10 @@ def sumar(x, y):
     sum = x + y
     return sum    
     
-l2 = reduce(sumar, map(cuadrado, l))
+l2 = functools.reduce(sumar, map(cuadrado, l))
 print(l2)
-l2 = reduce(sumar, map(raiz, l))
+l2 = functools.reduce(sumar, map(raiz, l))
+print(l2)
 def sumAndPow2(l):
     sum = 0
     for i in range(l):
@@ -32,31 +35,31 @@ def sumAndSquare(l):
 filter(lambda n: n % 2.0 == 0, l)
 
 l2 = [x for x in l if x % 2.0 == 0]
-print l2
+print(l2)
 
 def saludar(lang):    
     def saludar_es():
-        print "Hola"
+        print("Hola")
     def saludar_en():        
-        print "Hi"
+        print("Hi")
     def saludar_fr():        
-        print "Salut"
+        print("Salut")
     lang_func = {"es": saludar_es, "en": saludar_en, "fr": saludar_fr}    
     return lang_func[lang]
-f = saludar("es") 
+f = saludar("fr") 
 f()
 
 
 
 def mi_decorador(funcion):    
     def nueva(*args):        
-        print "Llamada a la funcion", funcion.__name__        
+        print("Llamada a la funcion", funcion.__name__)       
         retorno = funcion(*args)        
         return retorno    
     return nueva
 
 
 def imp(arg):
-    print arg
+    print(arg)
 
 mi_decorador(imp)("hola")
