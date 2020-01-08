@@ -46,7 +46,7 @@ def saludar(lang):
         print("Salut")
     lang_func = {"es": saludar_es, "en": saludar_en, "fr": saludar_fr}    
     return lang_func[lang]
-f = saludar("fr") 
+f = saludar("es") 
 f()
 
 

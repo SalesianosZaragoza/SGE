@@ -20,10 +20,8 @@ mat = [[1, 2, 3],
         [7, 8, 9],
       ]
 
-print("Ejemplo 1:")
-print([[fila[i] for fila in mat] for i in [0, 1]])
+print([[fila[i] for fila in mat] for i in [0, 1, 2]])
 
-print("Ejemplo 2:")
 for i in [0, 1, 2]:
     for fila in mat:
         print(fila[i],)
