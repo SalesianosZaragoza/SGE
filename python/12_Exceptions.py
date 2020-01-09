@@ -2,7 +2,7 @@
 
 class MyException:
     def __init__(self, message):
-        print(message);
+        print(message)
 
 if True:
     try:

@@ -3,7 +3,7 @@
 def fib(n):  # escribe la serie Fibonacci hasta n
     a, b = 0, 1
     while b < n:
-        print b,
+        print(b, end=" ")
         a, b = b, a + b
 
 def fib2(n):  # devuelve la serie Fibonacci hasta n

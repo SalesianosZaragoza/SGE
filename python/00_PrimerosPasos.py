@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
-print 'Hola mundo 1';
-print "Hola mundo 2"
-print('Hola mundo 3');
+print('Hola mundo 1')
+print("Hola mundo 2");
 
-print """ esto
+print(""" esto
     es
     una
     cadena
     multi
         linea
-    """
+    """)
 
-print "esto\n"\
+print("esto\n"\
     "es\n"\
     "otra\n"\
     "cadena\n"\
     "multi\n"\
-    "linea\n"
+    "linea\n")
 
 '''
 esto es un comentario

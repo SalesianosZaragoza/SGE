@@ -7,7 +7,7 @@ print([3*x for x in vec if x < 2])
 
 print([[x,x**2] for x in vec])
 # print([x, x**2 for x in vec])   # error - se requieren parentesis para tuplas
-print ([(x, x**2) for x in vec])
+print([(x, x**2) for x in vec])
 vec1 = [2, 4, 6]
 vec2 = [4, 3, -9]
 print([x*y for x in vec1 for y in vec2])
@@ -20,9 +20,9 @@ mat = [[1, 2, 3],
         [7, 8, 9],
       ]
 
-# print [[fila[i] for fila in mat] for i in [0, 1, 2]]
+print([[fila[i] for fila in mat] for i in [0, 1, 2]])
 
 for i in [0, 1, 2]:
     for fila in mat:
-        print(fila[i],)
+        print(fila[i])
     print

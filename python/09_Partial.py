@@ -5,10 +5,11 @@ def f(a, b, c, x):
 
 g = partial(f, 3, 1, 4)
 
-print g(5)
+print(g(5))
 
 def conexion(urljdbc, dabasename, user, password):
-    print urljdbc, dabasename, user, password
+    print("Urljdbc:", urljdbc, "Database:", dabasename, "User:", user, "Password:", password)
 
 mysql= partial(conexion,"jdbc:mysql:3306", "mydabase")
+
 mysql("sa","mypassword")
