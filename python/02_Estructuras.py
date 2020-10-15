@@ -23,7 +23,9 @@ print(a[0:-1])
 print(a[:2])
 print(a[:2] + ['carne', 2 * 2]) 
 
-matrix =[ [1,2,3] , [6,5,4], [7,9,8]]
+matrix =[ [1,2,3] , 
+        [6,5,4], 
+        [7,9,8]]
 print(matrix)
 
 #print 2 * (a[:2] + ['Boo!'])

@@ -5,7 +5,7 @@ l = [1, 2, 3, 4]
 
 def cuadrado(n):    return n ** 2
 l2 = map(cuadrado, l)
-   
+print(*l2)
 
 def raiz(n):    return math.sqrt(n)
 l2 = map(raiz, l)
@@ -13,6 +13,7 @@ l2 = map(raiz, l)
 def es_par(n):    
     return (n % 2.0 == 0)
 l2 = filter(es_par, l)
+print(*l2)
 
 def sumar(x, y):    
     sum = x + y
