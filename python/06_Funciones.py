@@ -14,7 +14,7 @@ print(a)
 print(b)
 c = sumatory()
 print(c)
-sumatory(integer1)
+sumatory(integer1) #sumatory(param1=integer1)
 sumatory(param2=integer1)
 
 # Los valores por omision son evaluados

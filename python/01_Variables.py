@@ -1,6 +1,6 @@
 
-import math as math_lib;
-from math import *;
+import math as math_lib
+from math import *
 import os
 
 

@@ -17,7 +17,7 @@ print(mytuple3 * 5)
 
 
 # trabajando con listas
-a = ['pan', 'huevos', 100, 1234]
+a = ['pan', 'huevos', 100, 1234] # a = list('pan', 'huevos', 100, 1234)
 print(len(a))
 print(a[0:-1])
 print(a[:2])

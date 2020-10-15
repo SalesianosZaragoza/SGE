@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 print('Hola mundo 1')
-print("Hola mundo 2");
+print("Hola mundo 2")
 
 print(""" esto
     es
@@ -9,7 +9,6 @@ print(""" esto
     multi
         linea
     """)
-
 print("esto\n"\
     "es\n"\
     "otra\n"\

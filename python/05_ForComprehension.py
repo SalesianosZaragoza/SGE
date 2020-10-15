@@ -1,10 +1,9 @@
 frutafresca = ['  banana', '  mora de Logan ', 'maracuya  ']
-print([arma.strip() for arma in frutafresca])
+print([fruta.strip() for fruta in frutafresca])
 vec = [2, 4, 6]
 print([3*x for x in vec])
 print([3*x for x in vec if x > 3])
 print([3*x for x in vec if x < 2])
-
 print([[x,x**2] for x in vec])
 # print([x, x**2 for x in vec])   # error - se requieren parentesis para tuplas
 print([(x, x**2) for x in vec])
