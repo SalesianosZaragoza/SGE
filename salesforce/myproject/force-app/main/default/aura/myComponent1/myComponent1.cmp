@@ -1,0 +1,38 @@
+<aura:component controller="Controlador" access="global">
+    <aura:attribute name="myvariable" type="String" />
+    <aura:attribute name="mapa" type="Map" />
+    <aura:attribute name="listaCuentas" type="List" />
+    <div>Componente1</div>
+    <div>Estas en el compoentente {!v.myvariable}</div>
+    <div>El contenido de v.mapa es {!v.mapa}</div>
+    <aura:iteration
+    <div class="c-container">
+        <lightning:input label="" name="" aura:id="" onclick=""></lightning:input>
+        <lightning:button label="conocer el componente" onclick="{!c.callControllerJs}"/>
+        <lightning:button label="llamar a Aura Controller" onclick="{!c.callAura}"/>
+        <lightning:button label="Muestra alert info" onclick="{!c.showAlert}"/>
+        <lightning:button label="Llamar a servicio externo" onclick="{!c.callExternalUrl}"/>
+        <input type="number" aura:id="userInput" label="Escribe un numero:" value="52" />
+        <br/>
+        <br/>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    <!-- <aura:attribute name="newContact" type="String[]" default="['Lastname','Email','Phone']"/>
+    <Lightning:recordform objectApiName="Contact" 
+    fields="{!v.newContact}" mode="edit" 
+    onsubmit="{!c.handleSubmit}" /> -->
+<aura:handler event="c:myevent1" action="{!c.handleEvent1}"/>
+</aura:component>	

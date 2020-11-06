@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
+    <aura:attribute name="recordIdNew" type="String" default="" />    
+    <aura:attribute name="recordIdEdit" type="String" default="" />
+    <lightning:card title="Display, Create, or Edit Records">
+        <lightning:recordForm recordId="{!v.recordIdNew}" 
+        objectApiName="Account"
+        fields="Name" />
+    </lightning:card>
+
+    <div>-------------------------------------------------------------</div>
+
+    <!-- Add this component to an account record Lightning page -->
+        <lightning:card title="Display, Create, or Edit Records">
+            <lightning:recordEditForm recordId="{!v.recordIdEdit}"
+                                      objectApiName="Account"
+                                      aura:id="myform"
+                                      onsubmit="{!c.handleSubmit}"
+                                      onsuccess="{!c.handleSuccess}">
+                <lightning:messages />
+                <lightning:inputField fieldName="Name" />
+                <div class="slds-m-top_medium">
+                    <lightning:button label="Cancel" onclick="{!c.handleCancel}" />
+                    <lightning:button type="submit" label="Save Account" variant="brand"/>
+                </div>
+                    
+            </lightning:recordEditForm>
+            <lightning:recordViewForm recordId="{!v.recordIdEdit}" objectApiName="Account">
+                <lightning:messages />
+                <lightning:outputField fieldName="Name" />
+            </lightning:recordViewForm>
+        </lightning:card>
+
+    
+
+</aura:component>

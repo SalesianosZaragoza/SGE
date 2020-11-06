@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
+<aura:attribute name="childAttribute" type="String"/>
+<aura:attribute name="recordId" type="String" />
+<aura:attribute name="recordId" type="String" />
+
+
+<aura:attribute name="favoriteColors" type="String[]" default="cyan, yellow, magenta"/>
+<aura:iteration items="{!v.favoriteColors}" var="s">
+    {!s}
+</aura:iteration>
+
+
+
+<div>Componente hijo </div>
+        <!-- <lightning:recordForm recordId="{!v.recordId}" 
+                              objectApiName="Account"
+                              fields="Name" /> -->
+
+    <lightning:card title="Display, Create, or Edit Records 2">
+        <lightning:recordEditForm objectApiName="Lead">
+            <lightning:messages />
+            <lightning:inputField fieldName="Name" />
+            <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+        </lightning:recordEditForm>
+        <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Account">
+            <lightning:messages />
+            <lightning:outputField fieldName="Name" />
+        </lightning:recordViewForm>
+    </lightning:card> 
+
+<div>{!v.childAttribute}</div>
+
+<aura:method name="childMethod" action="{!c.changeAttribute}">
+<aura:attribute name="msg" type="String" default="hola mundo"/>
+</aura:method>
+</aura:component>	

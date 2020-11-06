@@ -1,0 +1,27 @@
+<apex:page controller="ListPokemonController">
+  <!-- Page Header -->
+  <apex:sectionHeader title="Pokemon List" subtitle="List all pokemon" />
+
+  <apex:pageBlock>
+    <apex:pageBlockTable value="{!pokemons}" var="pokemon">
+      <apex:column value="{!pokemon.ID__c}" /> 
+      <apex:column value="{!pokemon.Name__c}" />
+      <apex:column value="{!pokemon.Life__c}" />
+      <apex:column value="{!pokemon.Attack__c}" />
+      <apex:column value="{!pokemon.TrainerID__c}" />
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+  <!--
+  <apex:pageBlock>
+    <apex:pageBlockSection>
+      <apex:dataList value="{!trainers}" var="trainer" type="1">
+        {!test.Name}
+      </apex:dataList>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+  -->
+
+  <apex:form>
+    <apex:commandButton value="Go to Pokemon Form" action="{!goToPokemon}" />
+</apex:form>
+</apex:page>

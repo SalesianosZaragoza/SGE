@@ -1,0 +1,20 @@
+<apex:page controller="testController">
+
+  <!-- Begin Form -->
+  <apex:form>
+    <apex:pageBlock title="add test" mode="edit">
+      <!-- Fields -->
+      <apex:pageBlockSection columns="3" showHeader="true" title="Membership Status">
+        <apex:inputField value="{!test.Name}" required="true" />
+      </apex:pageBlockSection>
+
+      <!-- Button Section -->
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Save test" action="{!save}" />
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+  <!-- <apex:form>
+    <apex:commandButton value="Go to List" action="{!goToList}" />
+  </apex:form> -->
+ </apex:page>

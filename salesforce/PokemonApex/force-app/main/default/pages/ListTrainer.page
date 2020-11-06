@@ -1,0 +1,24 @@
+<apex:page controller="ListTrainerController">
+  <!-- Page Header -->
+  <apex:sectionHeader title="Trainer List" subtitle="List all trainers" />
+
+  <apex:pageBlock>
+    <apex:pageBlockTable value="{!trainers}" var="trainer">
+      <apex:column value="{!trainer.Trainer_ID__c}" />
+      <apex:column value="{!trainer.Trainer_Name__c}"/>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+  <!--
+  <apex:pageBlock>
+    <apex:pageBlockSection>
+      <apex:dataList value="{!trainers}" var="trainer" type="1">
+        {!test.Name}
+      </apex:dataList>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+  -->
+
+  <apex:form>
+    <apex:commandButton value="Go to Trainer Form" action="{!goToTrainer}" />
+</apex:form>
+</apex:page>

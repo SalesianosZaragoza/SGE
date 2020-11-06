@@ -1,0 +1,23 @@
+<apex:page controller="ListContactController">
+  <!-- Page Header -->
+  <apex:sectionHeader title="Contact List" subtitle="List all contacts" />
+
+  <apex:pageBlock>
+    <apex:pageBlockTable value="{!contacts}" var="contact">
+      <apex:column value="{!contact.FirstName}" />
+      <apex:column value="{!contact.LastName}" />
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+
+  <apex:pageBlock>
+    <apex:pageBlockSection>
+      <apex:dataList value="{!contacts}" var="contact" type="1">
+        {!contact.FirstName} {!contact.LastName}
+      </apex:dataList>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+
+  <apex:form>
+    <apex:commandButton value="Go to Contact Form" action="{!goToContact}" />
+</apex:form>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page controller="PokemonController">
+
+  <apex:form>
+    <apex:pageBlock title="Add Pokemon" mode="edit">
+
+      <apex:pageBlockSection columns="2" showHeader="true" title="Insert Pokemons">
+        <apex:inputField value="{!pokemon.Name__c}" required="true" />
+        <apex:inputField value="{!pokemon.Life__c}" required="true" />
+        <apex:inputField value="{!pokemon.Attack__c}" required="true" />
+        <apex:inputField value="{!pokemon.TrainerID__c}" />
+      </apex:pageBlockSection>
+
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Save Pokemon" action="{!save}" />
+        <apex:commandButton value="Go to List" action="{!goToPokemonList}" />
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+ </apex:page>

@@ -1,0 +1,27 @@
+<apex:page standardController="Account" extensions="AccountController">
+
+  <!-- Begin Form -->
+  <apex:form>
+    <apex:pageBlock title="add account" mode="edit">
+
+
+      <!-- Fields -->
+      <apex:pageBlockSection columns="3" showHeader="true" title="Membership Status">
+        <apex:inputField value="{!account.Id}" required="true" />
+        <apex:inputField value="{!account.AccountNumber}" required="true" />
+        <apex:inputField value="{!account.Site}" required="true" />
+      </apex:pageBlockSection>
+
+      <!-- Button Section -->
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Save Account" action="{!save}" />
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+  <apex:form>
+    <apex:commandButton value="Go to List" action="{!goToList}" />
+  </apex:form>
+  <apex:form>
+    <apex:commandButton value="Go to Contact Form" action="{!goToContact}" />
+  </apex:form>
+</apex:page>

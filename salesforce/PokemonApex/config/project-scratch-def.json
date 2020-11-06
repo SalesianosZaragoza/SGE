@@ -1,0 +1,11 @@
+{
+  "country": "US",
+  "edition": "Developer",
+  "settings": {
+    "lightningExperienceSettings": {
+        "enableS1DesktopEnabled": true
+    }
+  },
+  "orgName": "Your Company",
+  "adminEmail": "yourname@example.com"
+}

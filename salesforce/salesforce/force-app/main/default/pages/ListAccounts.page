@@ -1,0 +1,24 @@
+<apex:page controller="ListAccountController">
+  <!-- Page Header -->
+  <apex:sectionHeader title="account List" subtitle="List all accounts" />
+
+  <apex:pageBlock>
+    <apex:pageBlockTable value="{!accounts}" var="account">
+      <apex:column value="{!account.ID}" />
+      <apex:column value="{!account.AccountNumber}" />
+      <apex:column value="{!account.Site}" />
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+
+  <apex:pageBlock>
+    <apex:pageBlockSection>
+      <apex:dataList value="{!accounts}" var="account" type="1">
+        {!account.ID} {!account.AccountNumber} {!account.Site}
+      </apex:dataList>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+
+  <apex:form>
+    <apex:commandButton value="Go to Account Form" action="{!goToAccount}" />
+</apex:form>
+</apex:page>
