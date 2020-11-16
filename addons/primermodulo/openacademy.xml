@@ -11,7 +11,7 @@
             </field>
         </record>
 
- <record model="ir.ui.view" id="course_form_view">
+        <record model="ir.ui.view" id="course_form_view">
             <field name="name">course.form</field>
             <field name="model">openacademy.curso</field>
             <field name="arch" type="xml">
@@ -20,11 +20,26 @@
                         <group>
                             <field name="name"/>
                             <field name="description"/>
+                            <field name="session_ids"/>
                         </group>
                     </sheet>
                 </form>
             </field>
-        </record>    <!-- window action -->
+        </record>    
+        
+        
+        <!-- override the automatically generated list view for courses -->
+        <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">course.tree</field>
+            <field name="model">openacademy.curso</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <!-- window action -->
         <!--
             The following tag is an action definition for a "window action",
             that is an action opening a view or a set of views
@@ -64,7 +79,6 @@
                         <group>
                             <field name="name"/>
                             <field name="start_date"/>
-                            <field name="duration"/>
                             <field name="seats"/>
                         </group>
                     </sheet>
