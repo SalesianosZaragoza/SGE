@@ -7,6 +7,10 @@
             <search>
                 <field name="name"/>
                 <field name="description"/>
+                <filter name="name" string="My names" domain="[('name', 'like', 'test')]"/>
+                <group string="Group By">
+                    <filter name="group_by_description" string="description" context="{'group_by': 'description'}"/>
+                </group>
             </search>
         </field>
     </record>

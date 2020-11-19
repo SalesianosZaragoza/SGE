@@ -8,9 +8,15 @@ class Course(models.Model):
     description = fields.Text()
     description2 = fields.Text()
     session_ids = fields.One2many(
-        'openacademy.session', 'course_id', string="Sessions")
+        'openacademy.session', 'course_id', string="Sessions",
+        domain="['seats' > 0]")
     user_id = fields.Many2one('res.users', default=lambda self: self.env.user)
 
+    _sql_constraints = [
+        ('loasdasdasddadas',
+         'CHECK(name != description)',
+         "The title of the course should not be the description")
+    ]
 
 
 class Session(models.Model):
