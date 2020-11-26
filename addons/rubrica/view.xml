@@ -1,0 +1,80 @@
+<odoo>
+
+
+    <record model="ir.ui.view" id="empresa_form_view">
+        <field name="name">empresa.form</field>
+        <field name="model">fct.empresa</field>
+        <field name="arch" type="xml">
+            <form string="Course Form">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="alumno_ids"/>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="empresa_tree_view">
+        <field name="name">empresa.tree</field>
+        <field name="model">fct.empresa</field>
+        <field name="arch" type="xml">
+            <tree string="Course Form">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="alumno_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="alumno_form_view">
+        <field name="name">alumno.form</field>
+        <field name="model">fct.alumno</field>
+        <field name="arch" type="xml">
+            <form string="Course Form">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="empresa_id"/>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="alumno_tree_view">
+        <field name="name">alumno.tree</field>
+        <field name="model">fct.alumno</field>
+        <field name="arch" type="xml">
+            <tree string="Course Form">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="empresa_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- window action -->
+    <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+    <record model="ir.actions.act_window" id="empresa_list_action">
+        <field name="name">Empresa</field>
+        <field name="res_model">fct.empresa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="alumno_list_action">
+        <field name="name">Alumno</field>
+        <field name="res_model">fct.alumno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="main_fct_menu" name="FCT"/>
+    <menuitem id="fct_menu" name="FCT assign" parent="main_fct_menu"/>
+    <menuitem id="empresa_menu" name="Empresa" parent="fct_menu" action="empresa_list_action"/>
+    <menuitem id="alumno_menu" name="Alumno" parent="fct_menu" action="alumno_list_action"/>
+
+
+
+
+
+</odoo>

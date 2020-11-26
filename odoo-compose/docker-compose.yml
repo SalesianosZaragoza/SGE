@@ -12,6 +12,7 @@ services:
       - ./addons:/mnt/my-module
       - $HOME/GIT/SGE/addons:/mnt/extra-addons
       - $HOME/CORRECCIONES:/mnt/examen
+      - $HOME/la_ruta_de_mi_codigo:/mnt/my-exam
   db:
     image: postgres:10
     ports:
