@@ -1,7 +1,6 @@
 <aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
 <aura:attribute name="childAttribute" type="String"/>
 <aura:attribute name="recordId" type="String" />
-<aura:attribute name="recordId" type="String" />
 
 
 <aura:attribute name="favoriteColors" type="String[]" default="cyan, yellow, magenta"/>
