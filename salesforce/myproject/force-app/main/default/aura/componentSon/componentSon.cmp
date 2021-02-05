@@ -1,6 +1,6 @@
-<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes, force:hasRecordId">
 <aura:attribute name="childAttribute" type="String"/>
-<aura:attribute name="recordId" type="String" />
+<aura:attribute name="param2" type="String"/>
 <aura:attribute name="recordId" type="String" />
 
 
@@ -11,6 +11,7 @@
 
 
 
+<div>{!v.param2}</div>
 <div>Componente hijo </div>
         <!-- <lightning:recordForm recordId="{!v.recordId}" 
                               objectApiName="Account"
@@ -31,6 +32,6 @@
 <div>{!v.childAttribute}</div>
 
 <aura:method name="childMethod" action="{!c.changeAttribute}">
-<aura:attribute name="msg" type="String" default="hola mundo"/>
+    <aura:attribute name="msg" type="String" default="hola mundo"/>
 </aura:method>
 </aura:component>	

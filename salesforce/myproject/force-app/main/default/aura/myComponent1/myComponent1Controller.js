@@ -1,4 +1,5 @@
 ({
+
     callControllerJs : function(component, event, helper) {
         helper.changeMyVariable(component, event);
     },

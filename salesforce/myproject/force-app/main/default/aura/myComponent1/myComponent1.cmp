@@ -1,11 +1,10 @@
-<aura:component controller="Controlador" access="global">
+<aura:component controller="Controlador" implements="flexipage:availableForAllPageTypes" access="global">
     <aura:attribute name="myvariable" type="String" />
     <aura:attribute name="mapa" type="Map" />
     <aura:attribute name="listaCuentas" type="List" />
     <div>Componente1</div>
     <div>Estas en el compoentente {!v.myvariable}</div>
     <div>El contenido de v.mapa es {!v.mapa}</div>
-    <aura:iteration
     <div class="c-container">
         <lightning:input label="" name="" aura:id="" onclick=""></lightning:input>
         <lightning:button label="conocer el componente" onclick="{!c.callControllerJs}"/>
