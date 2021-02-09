@@ -4,7 +4,7 @@
         component.set("v.output",selectedNumber);
     
         var appevent =$A.get("e.c:myevent1");
-        appevent.setParams({"message":"hey you!"});
+        appevent.setParams({"message":"hey he terminado!"});
         appevent.fire();
     
     },
@@ -35,7 +35,6 @@
         });
     }
     ,
-
     handleEvent2 : function(component, event){
         var message = event.getParam("message");
         console.log("observer component 2:"+message);

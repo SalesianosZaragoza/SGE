@@ -1,4 +1,4 @@
-<aura:component controller="Controlador" access="global">
+<aura:component controller="Controlador" implements="flexipage:availableForAllPageTypes" access="global">
     <aura:attribute name="myvariable" type="String" />
     <aura:attribute name="mapa" type="Map" />
     <aura:attribute name="listaCuentas" type="List" />

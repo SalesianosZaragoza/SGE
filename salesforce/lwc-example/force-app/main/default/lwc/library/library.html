@@ -1,0 +1,27 @@
+<template>
+  <lightning-layout>
+    <lightning-layout-item>
+      <span>Titulo</span>
+      <input id="title" type="text" value={title} />
+    </lightning-layout-item>
+
+    <lightning-layout-item>
+      <span>isbn</span>
+      <input id="isbn" type="text" value={isbn} />
+    </lightning-layout-item>
+    <lightning-layout-item>
+      <lightning-button onclick={handleBook}></lightning-button>
+    </lightning-layout-item>
+  </lightning-layout>
+
+  <template if:false={isBookListEmpty}>
+    <table>
+      <template for:each={books} for:item="book">
+        <tr key={book.isbn}>
+          <td>{book.title}</td>
+          <td>{book.isbn}</td>
+        </tr>
+      </template>
+    </table>
+  </template>
+</template>
