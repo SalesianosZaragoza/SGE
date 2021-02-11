@@ -1,11 +1,11 @@
 ({
     addToTable : function(component, event, helper) {
-         var params = event.getParam("arguments");
+         var input = event.getParam("input");
          console.log("recibiendo evento");
-         console.log(params);
-        if(params){
+         console.log(input);
+        if(input){
             var list = component.get("v.output");
-            list.push(params.input);
+            list.push(input);
             component.set("v.output",list);
         }
         console.log(component.get("v.output"));
