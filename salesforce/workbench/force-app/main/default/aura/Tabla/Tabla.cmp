@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:handler event="c:insertIntoTable" action="{!c.addToTable}"/>
+    <aura:attribute name="output" type="string[]"/>
+    <table>
+
+        <aura:iteration items="{!v.output}" var="out">
+        <tr>
+            {!out}
+        </tr>    
+        </aura:iteration>
+        
+    </table>
+</aura:component>	

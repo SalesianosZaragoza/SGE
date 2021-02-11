@@ -1,0 +1,4 @@
+<aura:component>
+<input type="text" aura:id="input"/>
+<input type="button" onclick="{!c.sendInputText}" value="Send Info"/>
+</aura:component>	
