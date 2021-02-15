@@ -1,0 +1,9 @@
+<aura:component>
+    <aura:attribute name="list" type="string[]"/>    
+    <input type="button" onclick="{!c.deleteAll}" value="Clear List"/>
+    <aura:iteration items="{!v.list}" var="out">
+    <tr>
+        {!out}
+    </tr>    
+    </aura:iteration>
+</aura:component>	

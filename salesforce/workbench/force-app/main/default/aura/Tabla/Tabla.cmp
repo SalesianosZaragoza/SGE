@@ -1,13 +1,14 @@
 <aura:component>
     <aura:handler event="c:insertIntoTable" action="{!c.addToTable}"/>
     <aura:attribute name="output" type="string[]"/>
-    <table>
+    <table border="1px">
 
-        <aura:iteration items="{!v.output}" var="out">
+      <aura:iteration items="{!v.output}" var="out">
         <tr>
             {!out}
         </tr>    
         </aura:iteration>
         
     </table>
+    <c:DeleteAllTable aura:id="child" list="{!v.output}"/>
 </aura:component>	
