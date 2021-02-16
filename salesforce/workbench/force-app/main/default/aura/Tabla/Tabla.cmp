@@ -3,8 +3,9 @@
     <aura:attribute name="output" type="string[]"/>
     <table border="1px">
 
-      <aura:iteration items="{!v.output}" var="out">
+      <aura:iteration items="{!v.output}" var="out" indexVar="index">
         <tr>
+            {!index}
         <td>
             {!out}
         </td>

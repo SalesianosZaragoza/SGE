@@ -6,6 +6,7 @@
         {!out}
     </tr>    
     </aura:iteration>
-   <aura:method name="deleteListFromSon" action="{!c.deleteAll}">
+   <aura:method name="deleteItemIdFromSon" action="{!c.deleteItem}">
+        <aura:attribute name="id" type="int"/>
     </aura:method>
 </aura:component>	

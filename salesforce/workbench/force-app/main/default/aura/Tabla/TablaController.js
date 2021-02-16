@@ -12,7 +12,7 @@
     },
     deleteAll : function(component, event, helper){
         var child = component.find("child");
-        child.deleteListFromSon();
+        child.deleteItemFromSon(id);
 
     },
 
