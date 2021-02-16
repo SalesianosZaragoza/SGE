@@ -5,7 +5,12 @@
 
       <aura:iteration items="{!v.output}" var="out">
         <tr>
+        <td>
             {!out}
+        </td>
+        <td>
+            <input class="form-control" type="button" name="delete all" onclick="{!c.deleteAll}" value="delete element"/>
+        </td>
         </tr>    
         </aura:iteration>
         

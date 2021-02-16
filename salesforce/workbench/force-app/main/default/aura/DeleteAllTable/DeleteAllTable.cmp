@@ -6,4 +6,6 @@
         {!out}
     </tr>    
     </aura:iteration>
+   <aura:method name="deleteListFromSon" action="{!c.deleteAll}">
+    </aura:method>
 </aura:component>	

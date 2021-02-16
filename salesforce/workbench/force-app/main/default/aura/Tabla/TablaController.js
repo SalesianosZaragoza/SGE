@@ -9,6 +9,11 @@
             component.set("v.output",list);
         }
         console.log(component.get("v.output"));
-    }
+    },
+    deleteAll : function(component, event, helper){
+        var child = component.find("child");
+        child.deleteListFromSon();
+
+    },
 
 })
