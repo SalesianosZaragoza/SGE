@@ -3,7 +3,15 @@
     <input type="button" onclick="{!c.deleteAll}" value="Clear List"/>
     <aura:iteration items="{!v.list}" var="out">
     <tr>
-        {!out}
+        <td>
+            {!out.nombre}
+        </td>
+        <td>
+            {!out.apellido}
+        </td>
+        <td>
+            <input type="button" onclick="{!c.changeName}"/>
+        </td>
     </tr>    
     </aura:iteration>
    <aura:method name="deleteItemIdFromSon" action="{!c.deleteItem}">

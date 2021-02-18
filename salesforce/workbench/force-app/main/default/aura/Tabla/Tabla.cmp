@@ -1,13 +1,16 @@
 <aura:component>
     <aura:handler event="c:insertIntoTable" action="{!c.addToTable}"/>
     <aura:attribute name="output" type="string[]"/>
-    <table border="1px">
+    <table border="1px solid black">
 
       <aura:iteration items="{!v.output}" var="out" indexVar="index">
         <tr>
             {!index}
         <td>
-            {!out}
+            {!out.nombre}
+        </td>
+        <td>
+            {!out.apellido}
         </td>
         <td>
             <input class="form-control" type="button" name="delete all" onclick="{!c.deleteAll}" itemid="{!index}" value="delete element"/>
