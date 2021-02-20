@@ -12,7 +12,8 @@
         console.log(component.get("v.output"));
     },
     deleteAll : function(component, event, helper){
-        var id = event.target.itemid;
+        var ctarget  = event.currentTarget;
+        var id = ctarget.dataset.value;
         var child = component.find("child");
         child.deleteItemIdFromSon(id);
 

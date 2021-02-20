@@ -8,9 +8,9 @@
         component.set("v.list", []);
     },
     deleteItem: function(component, event, helper){
-        var id = event.getParam("id")
+        var id = event.getParam("arguments").id;
         var list = component.get("v.list");
-        list.remove(id);
+        list.splice(id,1);
         component.set("v.list", list);
     },
     changeName: function(component, event, helper){

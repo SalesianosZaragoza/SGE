@@ -13,7 +13,7 @@
             {!out.apellido}
         </td>
         <td>
-            <input class="form-control" type="button" name="delete all" onclick="{!c.deleteAll}" itemid="{!index}" value="delete element"/>
+            <input class="form-control" type="button" name="delete all" onclick="{!c.deleteAll}" data-value="{!index}" value="delete element"/>
         </td>
         </tr>    
         </aura:iteration>
