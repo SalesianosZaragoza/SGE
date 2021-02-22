@@ -10,7 +10,7 @@
             {!out.apellido}
         </td>
         <td>
-            <input type="button" onclick="{!c.changeName}" itemid="{!index}"/>
+            <input type="button" onclick="{!c.changeName}" data-value="{!index}" />
         </td>
     </tr>    
     </aura:iteration>

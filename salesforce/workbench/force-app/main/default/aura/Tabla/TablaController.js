@@ -4,7 +4,7 @@
          console.log("recibiendo evento");
          console.log(input);
         if(input){
-            var list = Array(component.get("v.output"));
+            var list = component.get("v.output");
             var objeto = {nombre: input, apellido: "Doe" }
             list.push(objeto);
             component.set("v.output",list);

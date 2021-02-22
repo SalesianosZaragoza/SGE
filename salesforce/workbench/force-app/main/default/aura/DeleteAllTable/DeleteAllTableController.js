@@ -9,21 +9,22 @@
     },
     deleteItem: function(component, event, helper){
         var id = event.getParam("arguments").id;
-        var list = Array(component.get("v.list"));
+        var list = component.get("v.list");
         list.splice(id,1);
         component.set("v.list", list);
     },
     changeName: function(component, event, helper){
-        var id = event.target.itemid;      
-        var list =Array(component.get("v.list"));
-        var itemToUpdate = list.find(id);
+        var ctarget  = event.currentTarget;
+        var id = ctarget.dataset.value;   
+        var list =component.get("v.list");
+        var itemToUpdate = list[id];
+        console.log("cambiando nombre a:"+itemToUpdate );
         var action =component.get("c.giveMeUnknownName");
         action.setCallback(this, function(response){
             var state = response.getState();
             if(state==="SUCCESS"){
                 console.log(itemToUpdate);
                 itemToUpdate.nombre= response.getReturnValue();
-                list.push(itemToUpdate);
                 component.set("v.list",list);                
             }
 
