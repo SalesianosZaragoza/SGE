@@ -1,7 +1,7 @@
-<aura:component>
+<aura:component controller="Manager">
     <aura:attribute name="list" type="string[]"/>    
     <input type="button" onclick="{!c.deleteAll}" value="Clear List"/>
-    <aura:iteration items="{!v.list}" var="out">
+    <aura:iteration items="{!v.list}" var="out" indexVar="index">
     <tr>
         <td>
             {!out.nombre}
@@ -10,7 +10,7 @@
             {!out.apellido}
         </td>
         <td>
-            <input type="button" onclick="{!c.changeName}"/>
+            <input type="button" onclick="{!c.changeName}" itemid="{!index}"/>
         </td>
     </tr>    
     </aura:iteration>
