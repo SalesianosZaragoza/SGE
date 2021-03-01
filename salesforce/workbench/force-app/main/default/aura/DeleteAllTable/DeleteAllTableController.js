@@ -25,6 +25,7 @@
             if(state==="SUCCESS"){
                 console.log(itemToUpdate);
                 itemToUpdate.nombre= response.getReturnValue();
+                itemToUpdate.edad=18;
                 component.set("v.list",list);                
             }
 

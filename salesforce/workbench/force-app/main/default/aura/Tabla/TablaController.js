@@ -5,7 +5,7 @@
          console.log(input);
         if(input){
             var list = component.get("v.output");
-            var objeto = {nombre: input, apellido: "Doe" }
+            var objeto = {nombre: input, apellido: "Doe", edad : 5 }
             list.push(objeto);
             component.set("v.output",list);
         }
