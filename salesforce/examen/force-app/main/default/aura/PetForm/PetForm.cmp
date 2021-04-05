@@ -1,0 +1,5 @@
+<aura:component>
+<input type="text" aura:id="petName"/>
+<input type="text" aura:id="petChipId"/>
+<input type="button" onclick=""/>
+</aura:component>

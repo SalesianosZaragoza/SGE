@@ -1,0 +1,23 @@
+<aura:component>
+
+ <aura:handler event="c:insertOwner" action="{!c.addToTable}"/>
+    <aura:attribute name="data" type="Object[]"/>
+<table>
+<thead>
+    <tr>
+        <td>nombre</td>
+        <td>dni</td>
+    </tr>
+</thead>
+<aura:iteration items="{!v.data}" var="row" indexVar="index">
+   <tr>
+       <td>
+        {!row.ownerName}
+       </td>
+       <td>
+        {!row.ownerDni}
+       </td>
+   </tr> 
+    </aura:iteration>
+</table>
+</aura:component>	

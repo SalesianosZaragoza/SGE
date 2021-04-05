@@ -1,0 +1,5 @@
+<aura:component>
+<input type="text" aura:id="ownerName"/>
+<input type="text" aura:id="ownerDni"/>
+<input type="button" onclick="{!c.sendOwnerData}" value="insertar propietario"/>
+</aura:component>	
