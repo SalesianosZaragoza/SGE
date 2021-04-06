@@ -1,0 +1,18 @@
+<aura:component>
+    <aura:attribute name="ownerName" type="string"/>
+    <aura:attribute name="petName" type="string"/>
+    <lightning:select name="selectOwner" aura:id="selectOwner" label="Owner" required="true">
+        <option value="">Elija el propietario</option>
+        <aura:iteration items="{!v.output}" var="out" indexVar="index">
+            <option value="{!out.ownerName}">{!out.ownerName}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:select name="selectPet" aura:id="selectPet" label="Pet" required="true">
+        <option value="">Elija la mascota</option>
+
+        <aura:iteration items="{!v.output}" var="out" indexVar="index">
+            <option value="{!out.petName}">{!out.petName}</option>
+        </aura:iteration>
+    </lightning:select>
+    <input type="button" onclick="{!c.sendLinkData}" value="insertar propietario"/>
+</aura:component>	

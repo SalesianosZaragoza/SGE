@@ -1,3 +1,22 @@
 <aura:component>
-
+    <aura:handler event="c:insertPet" action="{!c.addToTable}"/>
+    <aura:attribute name="data" type="Object[]"/>
+    <table>
+<thead>
+    <tr>
+        <th>nombre</th>
+        <th>dni</th>
+    </tr>
+</thead>
+<aura:iteration items="{!v.data}" var="row" indexVar="index">
+   <tr>
+       <td>
+        {!row.petName}
+       </td>
+       <td>
+        {!row.petChipId}
+       </td>
+   </tr> 
+    </aura:iteration>
+</table>
 </aura:component>	
