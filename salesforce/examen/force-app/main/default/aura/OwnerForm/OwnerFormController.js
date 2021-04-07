@@ -3,8 +3,8 @@
 
     },
     sendOwnerData : function(component, event, helper) {
-        var name = component.find("ownerName").getElement().value();
-        var dni = component.find("ownerDni").getElement().value();
+        var name = component.find("ownerName").getElement().value;
+        var dni = component.find("ownerDni").getElement().value;
 
         var appevent =$A.get("e.c:insertOwner");
         appevent.setParams({

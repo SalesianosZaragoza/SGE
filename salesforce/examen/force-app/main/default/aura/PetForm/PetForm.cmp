@@ -1,5 +1,9 @@
 <aura:component>
-<input type="text" aura:id="petName"/>
-<input type="text" aura:id="petChipId"/>
-<input type="button" onclick=""/>
+    <br/>
+    <p>Nombre de la mascota</p>
+    <input type="text" aura:id="petName"/>
+    <p>Número de chip</p>
+    <input type="text" aura:id="petChipId"/>
+    <input type="button" onclick="{!c.sendPetData}" value="insertar mascota"/>
+    <br/>
 </aura:component>
