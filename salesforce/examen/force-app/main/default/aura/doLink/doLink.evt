@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="ownerName" type="string"/>
+    <aura:attribute name="petName" type="string"/>
+</aura:event>
