@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="coinciden" type="Boolean"/>
+    <aura:attribute name="tiempo" type="String"/>
+    <aura:attribute name="intentos" type="Integer"/>
+</aura:event>

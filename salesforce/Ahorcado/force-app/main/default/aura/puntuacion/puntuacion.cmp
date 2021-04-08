@@ -1,0 +1,28 @@
+<aura:component controller="puntuacion">
+    <aura:attribute name="scoreboard" type="Object"/>
+
+    <table style="border:1px solid black">
+        <thead>
+            <tr>
+                <th style="border:1px solid black">Tiempo</th>
+                <th style="border:1px solid black">Intentos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.scoreboard}" var="score">
+                <tr>
+                    <td style="border:1px solid black">
+                        {!score[0]}
+                    </td>
+                    <td style="border:1px solid black">
+                        {!score[1]}
+                    </td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    <aura:method name="addScoreFromSon" action="{!c.addScore}" access="public">
+        <aura:attribute name="tiempo" type="String"/>
+        <aura:attribute name="intentos" type="Integer"/>
+    </aura:method>
+</aura:component>	

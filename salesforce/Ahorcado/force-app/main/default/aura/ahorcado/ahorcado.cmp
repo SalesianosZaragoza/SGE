@@ -1,0 +1,9 @@
+<aura:component>
+
+    <c:clave />
+
+    <br/><br/><br/>
+
+    <c:comprobar />
+
+</aura:component>	

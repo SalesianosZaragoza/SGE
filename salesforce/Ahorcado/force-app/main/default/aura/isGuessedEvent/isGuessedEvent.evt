@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="coinciden" type="Boolean"/>
+    <aura:attribute name="key" type="String"/>
+</aura:event>

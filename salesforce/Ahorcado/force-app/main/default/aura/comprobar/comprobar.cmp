@@ -1,0 +1,21 @@
+<aura:component>
+    <aura:handler event="c:isGuessedEvent" action="{!c.isGuessed}"/>
+    <aura:attribute name="tries" type="Integer" default="15"/>
+    <aura:attribute name="pista" type="String" default=""/>
+    <aura:attribute name="status" type="String" default=""/>
+
+    <input type="text" aura:id="word"/>
+    <input type="button" name="guessWord" onclick="{!c.guessWord}" value="Adivinar"/>
+
+    <br/><br/><br/>
+
+    Pista: {!v.pista}
+
+    <br/>
+
+    Intentos: {!v.tries}
+
+    <br/>
+
+    Estado: {!v.status}
+</aura:component>

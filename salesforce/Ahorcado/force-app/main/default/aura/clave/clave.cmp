@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:handler event="c:guessEvent" action="{!c.guessWord}"/>
+    <aura:handler event="c:guessedEvent" action="{!c.guessed}"/>
+    <aura:attribute name="key" type="String" default=""/>
+
+    <input type="text" aura:id="key"/>
+    <input type="button" name="set" onclick="{!c.setKey}" value="Establecer palabra"/>
+
+    <br/><br/><br/>
+
+    <c:puntuacion aura:id="child"/>
+
+</aura:component>	
