@@ -1,0 +1,5 @@
+<aura:component>
+<c:hijo message="hola buenos dias" aura:id="hijo"></c:hijo>
+<br/>
+<input type="button" onclick="{!c.funcionDelHijo}"/>
+</aura:component>	
