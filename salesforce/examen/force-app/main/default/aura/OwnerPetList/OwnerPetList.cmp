@@ -1,0 +1,25 @@
+<aura:component>
+    <aura:attribute name="data" type="Object[]"/>
+    
+    <aura:handler event="c:doLink" action="{!c.addToTable}"/>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del propietario</th>
+                <th>Nombre de la Mascota</th>
+            </tr>
+        </thead>
+        <aura:iteration items="{!v.data}" var="row" indexVar="index">
+           <tr>
+               <td>
+                   
+                {!row.ownerName}
+               </td>
+               <td>
+                {!row.petName}
+               </td>
+           </tr> 
+            </aura:iteration>
+        </table>
+</aura:component>	
