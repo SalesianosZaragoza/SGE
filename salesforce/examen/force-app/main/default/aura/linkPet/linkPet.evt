@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+      <aura:attribute name="pet" type="object[]"/>
+</aura:event>
+

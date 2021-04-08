@@ -1,11 +1,13 @@
 <aura:component>
-    <aura:handler event="c:insertOwner" action="{!c.addToTable}"/>
-    <aura:attribute name="data" type="Object[]"/>
+    <aura:handler event="c:linkOwner" action="{!c.addOwner}"/>
+    <aura:handler event="c:linkPet" action="{!c.addPet}"/>
+   <aura:attribute name="data" type="Object[]"/>
+   <div>------------------START LINKED LIST-----------------------------</div>
 <table>
 <thead>
     <tr>
-        <th>nombre</th>
-        <th>dni</th>
+        <th>data1</th>
+        <th>data2</th>
     </tr>
 </thead>
 <aura:iteration items="{!v.data}" var="row" indexVar="index">
@@ -23,5 +25,6 @@
    </tr> 
     </aura:iteration>
 </table>
-<p>------------------------------------------------</p>
+
+   <div>------------------END LINKED LIST-----------------------------</div>
 </aura:component>	

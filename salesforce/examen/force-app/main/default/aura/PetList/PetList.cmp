@@ -16,6 +16,9 @@
        <td>
         {!row.petChipId}
        </td>
+       <td>
+           <input type="button" onclick="{!c.link}" value="link" data-value="{!index}"/>
+       </td>
    </tr> 
     </aura:iteration>
 </table>
