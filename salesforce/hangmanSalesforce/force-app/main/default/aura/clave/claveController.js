@@ -19,20 +19,19 @@
         var wordToGuess = component.get("v.wordToGuess");
         var wordToCheck = event.getParam("word");
 
-        if(wordToCheck === wordToGuess){
-            console.log('Ole tu hueva sosio');
-            
+        if(wordToCheck === wordToGuess){            
             var appevent =$A.get("e.c:sendScore");
             appevent.setParams({
                 "tries":tries
             });
             console.log("disparando sendScore event:"+tries);
             appevent.fire();
-            
+            component.set("v.message", "HAS ACERTADOOO!");
         }else{
             var hint = component.get("v.hint");
             hint = wordToGuess.charAt(Math.floor(Math.random() * wordToGuess.length));
             component.set("v.hint",hint);
+            component.set("v.message", "Prueba otra vez");
         }   
     }
 })
