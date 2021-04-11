@@ -4,11 +4,11 @@
     },
     registerScore : function(component, event, helper) {
     var scores = component.get("v.scores");
-    var tries = event.getParam("tries");
+    var tries = event.getParam("arguments").tries;
     var today = new Date();
     var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-    var objeto = {tries: tries, date: date}
-    scores.push(objeto);
+    var newScore = {tries: tries, date: date}
+    scores.push(newScore);
     component.set("v.scores",scores);
     }
 })

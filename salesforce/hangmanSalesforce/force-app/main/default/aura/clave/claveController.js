@@ -20,12 +20,9 @@
         var wordToCheck = event.getParam("word");
 
         if(wordToCheck === wordToGuess){            
-            var appevent =$A.get("e.c:sendScore");
-            appevent.setParams({
-                "tries":tries
-            });
+            var child = component.find('child');
+            child.insertScore(tries);
             console.log("disparando sendScore event:"+tries);
-            appevent.fire();
             component.set("v.message", "HAS ACERTADOOO!");
         }else{
             var hint = component.get("v.hint");

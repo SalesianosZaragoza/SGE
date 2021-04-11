@@ -11,4 +11,5 @@
     <span> Intentos realizados: {!v.tries}</span>
     <br/>
     <span>Pista: {!v.hint}</span>
+    <c:puntuacion aura:id="child"></c:puntuacion>
 </aura:component>

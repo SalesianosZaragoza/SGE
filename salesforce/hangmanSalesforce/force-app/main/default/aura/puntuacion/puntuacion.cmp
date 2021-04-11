@@ -1,5 +1,4 @@
 <aura:component>
-    <aura:handler event="c:sendScore" action="{!c.registerScore}"/>
     <aura:attribute name="scores" type="Object[]"></aura:attribute>
     <table>
         <thead>
@@ -19,4 +18,7 @@
            </tr> 
             </aura:iteration>
         </table>
+        <aura:method name="insertScore" action="{!c.registerScore}">
+            <aura:attribute name="tries" type="Integer"></aura:attribute>
+        </aura:method>
 </aura:component>	
