@@ -3,11 +3,10 @@
 
     },
     setWord : function(component, event, helper) {
-        var tries = component.get("v.tries");
-        tries = 0;
-        component.set("v.tries",tries);
-        var wordToGuess = component.get("v.wordToGuess");
-        wordToGuess = event.getParam("word");
+        //Set tries to 0 everytime we reset the game
+        component.set("v.tries",0);
+
+        var wordToGuess = event.getParam("word");
         component.set("v.wordToGuess",wordToGuess);
     },
     checkWord : function(component, event, helper) {
