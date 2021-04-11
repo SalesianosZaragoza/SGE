@@ -5,13 +5,34 @@
     generateWord: function(component, event, helper){
         let wordList =["patata","tomate", "mesa", "aprobado"];
         const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-        
-        var appevent =$A.get("e.c:sendWord");
-        appevent.setParams({
-            "word":randomWord
-        });
-        console.log("disparando sendWord event:"+randomWord);
-        appevent.fire();
-    }
+        component.set("v.wordToGuess",randomWord);
+    },
 
+    checkWord : function(component, event, helper) {
+        
+        //Increment tries
+        var tries = component.get("v.tries");
+        tries++;
+        component.set("v.tries",tries);
+
+        //Checking word
+        var wordToGuess = component.get("v.wordToGuess");
+        var wordToCheck = event.getParam("word");
+
+        if(wordToCheck === wordToGuess){
+            console.log('Ole tu hueva sosio');
+            
+            var appevent =$A.get("e.c:sendScore");
+            appevent.setParams({
+                "tries":tries
+            });
+            console.log("disparando sendScore event:"+tries);
+            appevent.fire();
+            
+        }else{
+            var hint = component.get("v.hint");
+            hint = wordToGuess.charAt(Math.floor(Math.random() * wordToGuess.length));
+            component.set("v.hint",hint);
+        }   
+    }
 })

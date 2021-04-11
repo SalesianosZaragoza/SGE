@@ -1,0 +1,11 @@
+.THIS table, .THIS td, .THIS tr, .THIS th {
+    border: 1px solid black;
+  }
+  .THIS table {
+    width: 20%;
+    margin-top: 10px;  
+    }
+    .THIS th {
+      font-weight: bold;
+      font-size: 18px;
+    }

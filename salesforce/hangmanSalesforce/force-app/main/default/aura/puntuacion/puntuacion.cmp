@@ -1,0 +1,22 @@
+<aura:component>
+    <aura:handler event="c:sendScore" action="{!c.registerScore}"/>
+    <aura:attribute name="scores" type="Object[]"></aura:attribute>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
+        <aura:iteration items="{!v.scores}" var="row" indexVar="index">
+           <tr>
+               <td>                   
+                {!row.date}
+               </td>
+               <td>
+                {!row.tries}
+               </td>
+           </tr> 
+            </aura:iteration>
+        </table>
+</aura:component>	

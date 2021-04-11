@@ -9,24 +9,15 @@
         var wordToGuess = event.getParam("word");
         component.set("v.wordToGuess",wordToGuess);
     },
-    checkWord : function(component, event, helper) {
-        //Increment tries
-        var tries = component.get("v.tries");
-        tries++;
-        component.set("v.tries",tries);
+    sendWord : function(component, event, helper) {
+        var wordInput = component.find("wordInput").getElement().value;
 
-        //Checking word
-        var wordToGuess = component.get("v.wordToGuess");
-        var wordToCheck = component.find("wordInput").getElement().value;
-
-        if(wordToCheck === wordToGuess){
-            console.log('Ole tu hueva sosio');
-        }else{
-            var hint = component.get("v.hint");
-            hint = wordToGuess.charAt(Math.floor(Math.random() * wordToGuess.length));
-            component.set("v.hint",hint);
-        }
-
+        var appevent =$A.get("e.c:sendWord");
+        appevent.setParams({
+            "word":wordInput
+        });
+        console.log("disparando sendWord event:"+wordInput);
+        appevent.fire();
     },
 
 })
