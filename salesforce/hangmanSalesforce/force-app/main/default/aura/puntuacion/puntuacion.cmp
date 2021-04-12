@@ -1,0 +1,20 @@
+<aura:component controller="puntuacionController">
+    <aura:attribute name="scores" type="string[]"></aura:attribute>
+    <table>
+        <thead>
+            <tr>
+                <th>Puntuación - Fecha</th>
+            </tr>
+        </thead>
+        <aura:iteration items="{!v.scores}" var="row" indexVar="index">
+           <tr>
+               <td>                   
+                {!row}
+               </td>
+           </tr> 
+            </aura:iteration>
+        </table>
+        <aura:method name="insertScore" action="{!c.registerScore}">
+            <aura:attribute name="tries" type="Integer"></aura:attribute>
+        </aura:method>
+</aura:component>	

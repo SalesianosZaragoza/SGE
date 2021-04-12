@@ -1,0 +1,15 @@
+<aura:component>
+    <aura:attribute name="tries" default="0" type="integer"></aura:attribute>
+    <aura:attribute name="hint" type="string"></aura:attribute>
+    <aura:attribute name="message" type="string"></aura:attribute>
+    <aura:attribute name="wordToGuess" type="string"></aura:attribute>
+    <aura:handler event="c:sendWord" action="{!c.checkWord}"/>
+    <input type="button" onclick="{!c.generateWord}" value="Generar Palabra"/>
+    <br/>
+    <span style="font-size: 20px">{!v.message}</span>
+    <br/>
+    <span> Intentos realizados: {!v.tries}</span>
+    <br/>
+    <span>Pista: {!v.hint}</span>
+    <c:puntuacion aura:id="child"></c:puntuacion>
+</aura:component>

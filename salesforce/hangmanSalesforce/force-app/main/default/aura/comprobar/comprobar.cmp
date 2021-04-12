@@ -1,0 +1,6 @@
+<aura:component>
+    <p>Introduce la palabra: </p>
+    <input type="text" aura:id="wordInput"/>
+    <input type="button" onclick="{!c.sendWord}" value="Validar palabra"/>
+    <br/>
+</aura:component>
