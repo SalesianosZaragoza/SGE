@@ -6,9 +6,5 @@ public with sharing class puntuacionController {
         scoreList.add(newScore);
         return scoreList;
     }
-
-    public puntuacionController(){
-        
-    }
 }
 
