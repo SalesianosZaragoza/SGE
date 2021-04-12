@@ -22,7 +22,6 @@
         if(wordToCheck === wordToGuess){            
             var child = component.find('child');
             child.insertScore(tries);
-            console.log("disparando sendScore event:"+tries);
             component.set("v.message", "HAS ACERTADOOO!");
         }else{
             var hint = component.get("v.hint");

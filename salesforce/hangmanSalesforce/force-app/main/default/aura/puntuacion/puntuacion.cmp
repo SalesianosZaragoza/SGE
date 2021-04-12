@@ -1,19 +1,15 @@
-<aura:component>
-    <aura:attribute name="scores" type="Object[]"></aura:attribute>
+<aura:component controller="puntuacionController">
+    <aura:attribute name="scores" type="string[]"></aura:attribute>
     <table>
         <thead>
             <tr>
-                <th>Fecha</th>
-                <th>Puntuación</th>
+                <th>Puntuación - Fecha</th>
             </tr>
         </thead>
         <aura:iteration items="{!v.scores}" var="row" indexVar="index">
            <tr>
                <td>                   
-                {!row.date}
-               </td>
-               <td>
-                {!row.tries}
+                {!row}
                </td>
            </tr> 
             </aura:iteration>
