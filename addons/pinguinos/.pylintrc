@@ -1,0 +1,2 @@
+
+init-hook='import sys; sys.path.append("~/GIT/odoo")'
