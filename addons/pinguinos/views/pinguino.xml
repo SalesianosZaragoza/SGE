@@ -1,0 +1,51 @@
+<odoo>
+
+    <record model="ir.ui.view" id="pinguino_form_view">
+        <field name="name">pinguino.form</field>
+        <field name="model">simuexamen.pinguino</field>
+        <field name="arch" type="xml">
+            <form string="Pinguino Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="raza"/>
+                        <field name="habitat"/>
+                        <field name="asociacion_id"/>
+                        <field name="padrino_id"/>
+                        <field name="tratamiento_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+
+    <record model="ir.ui.view" id="pinguino_tree_view">
+        <field name="name">pinguino.tree</field>
+        <field name="model">simuexamen.pinguino</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="habitat == '1.cautividad'" decoration-info="habitat == '2.zoologico'">
+                <field name="name"/>
+                <field name="raza"/>
+                <field name="habitat"/>
+                <field name="asociacion_id"/>
+                <field name="padrino_id"/>
+                <field name="tratamiento_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    
+
+    <record model="ir.actions.act_window" id="pinguino_list_action">
+        <field name="name">Pinguino</field>
+        <field name="res_model">simuexamen.pinguino</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">New pinguino</p>
+        </field>
+    </record>
+
+    
+    
+</odoo>  

@@ -1,0 +1,41 @@
+<odoo>
+
+    <record model="ir.ui.view" id="asociacion_form_view">
+        <field name="name">asociacion.form</field>
+        <field name="model">simuexamen.asociacion</field>
+        <field name="arch" type="xml">
+            <form string="Asociacion Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="pinguino_ids"/>
+                        
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="asociacion_tree_view">
+        <field name="name">asociacion.tree</field>
+        <field name="model">simuexamen.asociacion</field>
+        <field name="arch" type="xml">
+            <tree string="Asociacion Tree">
+                <field name="name"/>
+                <field name="pinguino_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="asociacion_list_action">
+        <field name="name">Asociacion</field>
+        <field name="res_model">simuexamen.asociacion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">New asociacion</p>
+        </field>
+    </record>
+
+    
+</odoo>  
