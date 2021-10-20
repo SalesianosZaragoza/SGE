@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   web:
-    image: odoo:13.0
+    image: odoo:14.0
     depends_on:
       - db
     ports:
@@ -10,11 +10,8 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/my-module
-      - $HOME/GIT/SGE/addons:/mnt/extra-addons
-      - $HOME/CORRECCIONES:/mnt/examen
-      - /mnt/c/Users/Usuario/Downloads:/mnt/my-exam
   db:
-    image: postgres:10
+    image: postgres:13
     ports:
       - "5432:5432"
     environment:
