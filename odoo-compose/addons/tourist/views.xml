@@ -1,0 +1,185 @@
+<odoo>
+
+    <record model="ir.actions.act_window" id="visit_list_action">
+        <field name="name">visit</field>
+        <field name="res_model">touring.visit</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="provincia_list_action">
+        <field name="name">provincia</field>
+        <field name="res_model">touring.provincia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="poblacion_list_action">
+        <field name="name">poblacion</field>
+        <field name="res_model">touring.poblacion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="turist_list_action">
+        <field name="name">turist</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="tourist_form_view">
+        <field name="name">turist.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Visitas">
+                        <group>
+                            <field name="visita_id"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="event_list_action">
+        <field name="name">eventos</field>
+        <field name="res_model">touring.event</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+
+    <menuitem name="Club de Turismo" id="touring_menu_root"/>
+    
+    <menuitem name="Provincias" id="touring_menu_provincias" parent="touring_menu_root"/>
+    <menuitem name="Poblaciones" id="touring_menu_poblaciones" parent="touring_menu_root"/>
+    <menuitem name="Visitas" id="touring_menu_visit" parent="touring_menu_root"/>
+    <menuitem name="Turista" id="touring_menu_turist" parent="touring_menu_root"/>
+    <menuitem name="Eventos" id="touring_menu_event" parent="touring_menu_root"/>
+    
+    
+    <menuitem name="listado de provincias" id="touring_list_provincias" parent="touring_menu_provincias"
+              action="provincia_list_action"/>
+    <menuitem name="listado de poblaciones" id="touring_list_poblaciones" parent="touring_menu_poblaciones"
+              action="poblacion_list_action"/>
+    <menuitem name="listado de visitas" id="touring_list_visit" parent="touring_menu_visit"
+              action="visit_list_action"/>
+    <menuitem name="listado de turista" id="touring_list_turist" parent="touring_menu_turist"
+              action="turist_list_action"/>
+    <menuitem name="listado de eventos" id="touring_list_event" parent="touring_menu_event"
+              action="event_list_action"/>
+    
+        
+        <record model="ir.ui.view" id="visit_form_view">
+            <field name="name">visit.form</field>
+            <field name="model">touring.visit</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de visitas">
+                    <sheet>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="tourist_id"/>
+                            <field name="provincia_id"/>
+                            <field name="poblacion_id"/>
+                            <field name="event"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="provincia_form_view">
+            <field name="name">provincia.form</field>
+            <field name="model">touring.provincia</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de provincias">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="poblacion_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="poblacion_form_view">
+            <field name="name">poblacion.form</field>
+            <field name="model">touring.poblacion</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de poblaciones">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="provincia_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+              
+              
+        <record model="ir.ui.view" id="visit_calendar_view">
+            <field name="name">visit.calendar</field>
+            <field name="model">touring.visit</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de visitas" date_start="start_date"
+                          date_stop="end_date">
+                    <field name="tourist_id"/>
+                    <field name="provincia_id"/>
+                    <field name="poblacion_id"/>
+                </calendar>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="event_form_view">
+            <field name="name">event.form</field>
+            <field name="model">touring.event</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de eventos">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="visit"/>
+                        </group>
+                        <notebook>
+                            <page string="Descripcion">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="visit_tree_view">
+            <field name="name">visit.tree</field>
+            <field name="model">touring.visit</field>
+            <field name="arch" type="xml">
+                <tree string="Listado de visitas">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="duration"/>
+                    <field name="tourist_id"/>
+                    <field name="provincia_id"/>
+                    <field name="poblacion_id"/>
+                    <field name="event"/>
+                </tree>
+            </field>
+        </record>
+       
+
+        <record model="ir.ui.view" id="visit_search_view">
+            <field name="name">visit.search</field>
+            <field name="model">touring.visit</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="provincia_id"/>
+                    <field name="poblacion_id"/>
+                </search>
+            </field>
+        </record>
+                  
+</odoo>
