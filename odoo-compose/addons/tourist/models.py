@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
-
-
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-module-docstring
+# pylint: disable=tow-few-public-methods
 class Provincia(models.Model):
     _name = 'touring.provincia'
     name = fields.Char(string="Nombre provincia", required=True)
