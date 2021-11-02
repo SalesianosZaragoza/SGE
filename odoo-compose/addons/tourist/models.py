@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
+import random
 from odoo import models, fields, api
 
 
 class Perros(models.Model):
     _name = "perritos"
     altura = fields.Integer(string="Altura del animal")
-    raza = fields.Char(string="raza del animal")
+    raza = fields.Char(string="raza del animal", compute="_compute_name")
     duenos_id = fields.Many2one("duenos", "dueños asociados")
+
+    @api.depends('altura')
+    def _compute_name(self):
+        for record in self:
+            record.raza = "hola" % str(record.altura)
 
 
 class Personas(models.Model):
