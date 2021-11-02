@@ -2,6 +2,36 @@
 from odoo import models, fields, api
 
 
+class Perros(models.Model):
+    _name = "perritos"
+    altura = fields.Integer(string="Altura del animal")
+    raza = fields.Char(string="raza del animal")
+    duenos_id = fields.Many2one("duenos", "dueños asociados")
+
+
+class Personas(models.Model):
+    _name = "personas"
+    dni = fields.Char(string="dni")
+
+
+class Duenos(models.Model):
+    _inherit = "personas"
+    _name = "duenos"
+    name = fields.Char(string="Nombre dueños", required=True)
+    apellido = fields.Char(string="Apellido dueños", required=True)
+    perros_id = fields.One2many('perritos',
+                                'duenos_id',
+                                string="Perros asociados")
+
+
+class Vets(models.Model):
+    _inherit = "personas"
+    especialidad = fields.Selection([
+        ('al', 'Alimen os'),
+        ('ci', 'Cirugia'),
+    ], 'ci')
+
+
 class Provincia(models.Model):
     _name = 'touring.provincia'
     name = fields.Char(string="Nombre provincia", required=True)
