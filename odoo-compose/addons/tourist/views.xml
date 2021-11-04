@@ -186,11 +186,9 @@
             <field name="arch" type="xml">
               <search string="Duenos">
                 <field name="name"/>
-
                 <field name="apellido" string="Name and apellido"
                   filter_domain="['|', ('name', 'ilike', self), ('apellido', 'ilike', self)]"/>
                 <field name="perros_id" widget="selection"/>
-
                 <filter name="my_jairo" string="My jairo"
                   domain="[('name', '=', 'jairo')]"/>
                 <group string="Agrupar por">
