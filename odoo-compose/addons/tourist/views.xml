@@ -1,5 +1,25 @@
 <odoo>
 
+
+
+    <record model="ir.actions.act_window" id="vets_list_action">
+        <field name="name">vets</field>
+        <field name="res_model">personas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="duenos_list_action">
+        <field name="name">duenos</field>
+        <field name="res_model">duenos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perritos_list_action">
+        <field name="name">perrazos</field>
+        <field name="res_model">perritos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
     <record model="ir.actions.act_window" id="visit_list_action">
         <field name="name">visit</field>
         <field name="res_model">touring.visit</field>
@@ -54,8 +74,19 @@
     <menuitem name="Visitas" id="touring_menu_visit" parent="touring_menu_root"/>
     <menuitem name="Turista" id="touring_menu_turist" parent="touring_menu_root"/>
     <menuitem name="Eventos" id="touring_menu_event" parent="touring_menu_root"/>
+
+    <menuitem name="Perritos" id="touring_menu_perritos" parent="touring_menu_root"/>
+    <menuitem name="Duenos" id="touring_menu_duenos" parent="touring_menu_root"/>
+    <menuitem name="Vets" id="touring_menu_vets" parent="touring_menu_root"/>
     
-    
+
+    <menuitem name="listado de vets" id="touring_list_vets" parent="touring_menu_vets"
+              action="vets_list_action"/>
+    <menuitem name="listado de duenos" id="touring_list_duenos" parent="touring_menu_duenos"
+              action="duenos_list_action"/>
+    <menuitem name="listado de perritos" id="touring_list_perritos" parent="touring_menu_perritos"
+              action="perritos_list_action"/>
+
     <menuitem name="listado de provincias" id="touring_list_provincias" parent="touring_menu_provincias"
               action="provincia_list_action"/>
     <menuitem name="listado de poblaciones" id="touring_list_poblaciones" parent="touring_menu_poblaciones"
@@ -151,7 +182,54 @@
             </field>
         </record>
         
-        
+
+
+
+        <record model="ir.ui.view" id="duenos_search_view">
+            <field name="name">duenos.search</field>
+            <field name="model">duenos</field>
+            <field name="arch" type="xml">
+              <search string="Duenos">
+                <field name="name"/>
+                <field name="apellido" string="Name and apellido"
+                  filter_domain="['|', ('name', 'ilike', self), ('apellido', 'ilike', self)]"/>
+                <field name="perros_id" widget="selection"/>
+                <filter name="my_jairo" string="My jairo"
+                  domain="[('name', '=', 'jairo')]"/>
+                <group string="Agrupar por">
+                  <filter name="group_by_apellido" string="Apellido"
+                        context="{'group_by': 'apellido'}"/>
+                </group>
+              </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="duenos_form_view">
+            <field name="name">duenos.form</field>
+            <field name="model">duenos</field>
+            <field name="arch" type="xml">
+                <form string="formulario de duenos">
+                    <sheet>
+                        <group>
+                          <field name="name"/>
+                          <field name="dni"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="duenos_tree_view">
+            <field name="name">duenos.tree</field>
+            <field name="model">duenos</field>
+            <field name="arch" type="xml">
+                <tree string="Listado de duenos">
+                    <field name="name"/>
+                    <field name="apellido"/>
+                </tree>
+            </field>
+        </record>
+       
+
         <record model="ir.ui.view" id="visit_tree_view">
             <field name="name">visit.tree</field>
             <field name="model">touring.visit</field>
