@@ -1,6 +1,7 @@
 <odoo>
 
 
+
     <record model="ir.actions.act_window" id="vets_list_action">
         <field name="name">vets</field>
         <field name="res_model">personas</field>
@@ -17,6 +18,7 @@
         <field name="res_model">perritos</field>
         <field name="view_mode">tree,form</field>
     </record>
+
 
     <record model="ir.actions.act_window" id="visit_list_action">
         <field name="name">visit</field>
@@ -72,6 +74,7 @@
     <menuitem name="Visitas" id="touring_menu_visit" parent="touring_menu_root"/>
     <menuitem name="Turista" id="touring_menu_turist" parent="touring_menu_root"/>
     <menuitem name="Eventos" id="touring_menu_event" parent="touring_menu_root"/>
+
     <menuitem name="Perritos" id="touring_menu_perritos" parent="touring_menu_root"/>
     <menuitem name="Duenos" id="touring_menu_duenos" parent="touring_menu_root"/>
     <menuitem name="Vets" id="touring_menu_vets" parent="touring_menu_root"/>
@@ -83,6 +86,7 @@
               action="duenos_list_action"/>
     <menuitem name="listado de perritos" id="touring_list_perritos" parent="touring_menu_perritos"
               action="perritos_list_action"/>
+
     <menuitem name="listado de provincias" id="touring_list_provincias" parent="touring_menu_provincias"
               action="provincia_list_action"/>
     <menuitem name="listado de poblaciones" id="touring_list_poblaciones" parent="touring_menu_poblaciones"
@@ -180,6 +184,7 @@
         
 
 
+
         <record model="ir.ui.view" id="duenos_search_view">
             <field name="name">duenos.search</field>
             <field name="model">duenos</field>
@@ -224,6 +229,7 @@
             </field>
         </record>
        
+
         <record model="ir.ui.view" id="visit_tree_view">
             <field name="name">visit.tree</field>
             <field name="model">touring.visit</field>
