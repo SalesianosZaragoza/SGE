@@ -178,6 +178,29 @@
             </field>
         </record>
         
+
+
+        <record model="ir.ui.view" id="duenos_search_view">
+            <field name="name">duenos.search</field>
+            <field name="model">duenos</field>
+            <field name="arch" type="xml">
+              <search string="Duenos">
+                <field name="name"/>
+
+                <field name="apellido" string="Name and apellido"
+                  filter_domain="['|', ('name', 'ilike', self), ('apellido', 'ilike', self)]"/>
+                <field name="perros_id" widget="selection"/>
+
+                <filter name="my_jairo" string="My jairo"
+                  domain="[('name', '=', 'jairo')]"/>
+                <group string="Agrupar por">
+                  <filter name="group_by_apellido" string="Apellido"
+                        context="{'group_by': 'apellido'}"/>
+                </group>
+              </search>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="duenos_form_view">
             <field name="name">duenos.form</field>
             <field name="model">duenos</field>
