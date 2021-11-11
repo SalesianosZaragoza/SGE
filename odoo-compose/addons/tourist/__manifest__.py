@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 {
     'name': "touring",
-
     'summary': """Touring club""",
-    
     'description': """
         Tourist module to manage visits:
     """,
-
-
     'author': "john doe",
     'website': "http://www.salesuanos.edu",
 
