@@ -6,19 +6,20 @@ from odoo import models, fields, api
 class Perros(models.Model):
     _name = "perritos"
     altura = fields.Integer(string="Altura del animal")
-    raza = fields.Char(string="raza del animal", compute="_compute_name")
+    raza = fields.Char(string="raza del animal")
     duenos_id = fields.Many2one("duenos", "dueños asociados")
     peso = fields.Integer(string="Peso del animal")
     imc = fields.Integer(string="calculo de indice mas corporal")
     age = fields.Float('Age', digits=(12, 1))
+    _sql_constraints = [('raza', 'UNIQUE (raza)',
+                         'ya existe un perro de esa raza')]
 
     @api.constrains('age')
     def _check_something(self):
         for record in self:
-            if record.age > 20:
+            if record.duenos_id.edad > 20:
                 raise ValidationError("too old: %s" % record.age)
 
-    @api.depends('altura')
     def _compute_name(self):
         for record in self:
             record.raza = str(record.altura)
@@ -45,15 +46,14 @@ class Personas(models.Model):
 class Duenos(models.Model):
     _inherit = "personas"
     _name = "duenos"
-    fecha_nac = fields.Date(string="Fecha Nacimiento",
-                             store=True)
+    fecha_nac = fields.Date(string="Fecha Nacimiento", store=True)
 
     name = fields.Char(string="Nombre dueños", required=True)
-    apellido = fields.Char(string="Apellido dueños", required=True)
+    apellido = fields.Char(string="llido dueños", required=True)
+    edad = fields.Float('Age', digits=(12, 1))
     perros_id = fields.One2many('perritos',
                                 'duenos_id',
                                 string="Perros asociados")
-
 
 
 class Vets(models.Model):

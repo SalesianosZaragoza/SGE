@@ -241,6 +241,34 @@
             </field>
         </record>
        
+        <record model="ir.ui.view" id="perritos_form_view">
+          <field name="name">perritos.form</field>
+            <field name="model">perritos</field>
+            <field name="arch" type="xml">
+                <form string="Listado de perros">
+                  <sheet>
+                    <field name="raza"/>
+                    <field name="imc"/>
+                    <field name="altura"/>
+                    <field name="peso"/>
+                    <field name="age"/>
+                  </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="peVrrazos_tree_view">
+          <field name="name">perritos.tree</field>
+            <field name="model">perritos</field>
+            <field name="arch" type="xml">
+                <tree string="Listado de perros">
+                    <field name="raza"/>
+                    <field name="imc"/>
+                    <field name="altura"/>
+                    <field name="peso"/>
+                    <field name="age"/>
+                </tree>
+            </field>
+        </record>
         <record model="ir.ui.view" id="visit_tree_view">
             <field name="name">visit.tree</field>
             <field name="model">touring.visit</field>
