@@ -46,6 +46,8 @@ class Personas(models.Model):
 class Duenos(models.Model):
     _inherit = "personas"
     _name = "duenos"
+    fecha_nac = fields.Date(string="Fecha Nacimiento", store=True)
+
     name = fields.Char(string="Nombre dueños", required=True)
     apellido = fields.Char(string="llido dueños", required=True)
     edad = fields.Float('Age', digits=(12, 1))

@@ -9,7 +9,7 @@
     <record model="ir.actions.act_window" id="duenos_list_action">
         <field name="name">duenos</field>
         <field name="res_model">duenos</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
     </record>
 
     <record model="ir.actions.act_window" id="perritos_list_action">
@@ -186,9 +186,11 @@
             <field name="arch" type="xml">
               <search string="Duenos">
                 <field name="name"/>
+
                 <field name="apellido" string="Name and apellido"
                   filter_domain="['|', ('name', 'ilike', self), ('apellido', 'ilike', self)]"/>
                 <field name="perros_id" widget="selection"/>
+
                 <filter name="my_jairo" string="My jairo"
                   domain="[('name', '=', 'jairo')]"/>
                 <group string="Agrupar por">
@@ -207,7 +209,9 @@
                     <sheet>
                         <group>
                           <field name="name"/>
+                          <field name="apellido"/>
                           <field name="dni"/>
+                          <field name="fecha_nac"/>
                         </group>
                     </sheet>
                 </form>
@@ -220,7 +224,20 @@
                 <tree string="Listado de duenos">
                     <field name="name"/>
                     <field name="apellido"/>
+                    <field name="dni"/>
+                    <field name="fecha_nac"/>
                 </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="duenos_calendar_view">
+            <field name="name">duenos.calendar</field>
+            <field name="model">duenos</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de " date_start="fecha_nac">
+                    <field name="name"/>
+                    <field name="apellido"/>
+                </calendar>
             </field>
         </record>
        
