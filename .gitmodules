@@ -1,0 +1,6 @@
+[submodule "odoo-compose/addons/openAcademy"]
+	path = odoo-compose/addons/openAcademy
+	url = https://github.com/VictorDavidFernandez/openAcademy.git
+[submodule "odoo-compose/addons/superheroes"]
+	path = odoo-compose/addons/superheroes
+	url = https://github.com/VictorDavidFernandez/superheroes.git
