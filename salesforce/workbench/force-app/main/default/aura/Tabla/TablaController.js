@@ -11,11 +11,21 @@
         }
         console.log(component.get("v.output"));
     },
-    deleteAll : function(component, event, helper){
+    deleteRow : function(component, event, helper){
         var ctarget  = event.currentTarget;
         var id = ctarget.dataset.value;
-        var child = component.find("child");
-        child.deleteItemIdFromSon(id);
+        if(id){
+            //elimino un elemento de la lista
+            var list = component.get("v.output");
+            list.splice(id,1);
+            component.set("v.output",list);
+        }
+
+
+
+
+        //var child = component.find("child");
+        //child.deleteItemIdFromSon(id);
 
     },
 
