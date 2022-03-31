@@ -16,11 +16,11 @@
             {!out.edad}
         </td>
         <td>
-            <input class="form-control" type="button" name="delete all" onclick="{!c.deleteAll}" data-value="{!index}" value="delete element"/>
+            <input class="form-control" type="button" name="delete element" onclick="{!c.deleteRow}" data-value="{!index}" value="delete element"/>
         </td>
         </tr>    
         </aura:iteration>
         
     </table>
-    <c:DeleteAllTable aura:id="child" list="{!v.output}"/>
+ 
 </aura:component>	
