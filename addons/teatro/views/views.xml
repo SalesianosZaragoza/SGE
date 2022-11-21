@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<!-- TEATRO BASE-->
+<!-- END TEATRO BASE-->
+
+<!-- SALAS-->
+<!-- Salas : tree -->
+<record model="ir.ui.view" id="teatro.sala_list_view" >
+    <field name="name">teatro.sala.view.tree</field>
+    <field name="model">teatro.sala</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="num_butacas"/>
+            <field name="description"/>
+        </tree>
+    </field>
+</record>
+<!-- END SALAS-->
+
+<!-- OBRA-->
+<!-- Obras: tree -->
+<record model="ir.ui.view" id="teatro.obra_list_view" >
+    <field name="name">teatro.obra.view.tree</field>
+    <field name="model">teatro.obra</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="genero"/>
+            <field name="idioma"/>
+            <field name="duracion" widget="float_time"/>
+            <field name="estreno"/>
+            <field name="resumen"/>
+        </tree>
+    </field>
+</record>
+<!-- END OBRAS-->
+
+<!-- PERSONA -->
+<!-- Persona: tree -->
+<record model="ir.ui.view" id="teatro.persona_list_view" >
+    <field name="name">teatro.persona.view.tree</field>
+    <field name="model">teatro.persona</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="nacionalidad"/>
+        </tree>
+    </field>
+</record>
+<!-- END PERSONA-->
+
+<!-- ACTOR -->
+<!-- Actor: tree -->
+<record model="ir.ui.view" id="teatro.actor_list_view" >
+    <field name="name">teatro.persona.view.tree</field>
+    <field name="model">teatro.actor</field>
+    <field name="inherit_id" ref="teatro.persona_list_view"/>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="inicio_trayectoria"/>
+            <field name="personaje"/>
+        </tree>
+    </field>
+</record>
+<!-- END ACTOR-->
+
+<!-- DIRECTOR -->
+<!-- Director: tree -->
+<record model="ir.ui.view" id="teatro.director_list_view" >
+    <field name="name">teatro.director.view.tree</field>
+    <field name="model">teatro.director</field>
+    <field name="inherit_id" ref="teatro.persona_list_view"/>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="destreza"/>
+            <field name="experiencia"/>
+        </tree>
+    </field>
+</record>
+<!-- END DIRECTOR-->
+
+<!-- OPINION -->
+<!--  Opinion: tree -->
+<record model="ir.ui.view" id="teatro.opinion_list_view" >
+    <field name="name">teatro.opinion.view.tree</field>
+    <field name="model">teatro.opinion</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="nombre"/>
+            <field name="edad"/>
+            <field name="fecha"/>
+            <field name="nota"/>
+            <field name="comentarios"/>
+        </tree>
+    </field>
+</record>
+<!-- END OPINION-->
+
+<!-- PROMOCION -->
+<!--  Promocion: tree -->
+<record model="ir.ui.view" id="teatro.promocion_list_view" >
+    <field name="name">teatro.promocion.view.tree</field>
+    <field name="model">teatro.promocion</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="descuento" widget="percentpie" />
+        </tree>
+    </field>
+</record>
+<!-- END PROMOCION-->
+
+
+
+
+<!-- DEFINICION DE MENUS-->
+<!-- Actions para abrir vistas de modelos-->
+<record model="ir.actions.act_window" id="teatro.sala_action_window">
+    <field name="name">Salas</field>
+    <field name="res_model">teatro.sala</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="teatro.obra_action_window" >
+    <field name="name">Obras</field>
+    <field name="res_model">teatro.obra</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="teatro.actor_action_window" >
+    <field name="name">Actores</field>
+    <field name="res_model">teatro.actor</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="teatro.director_action_window" >
+    <field name="name">Directores</field>
+    <field name="res_model">teatro.director</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="teatro.opinion_action_window" >
+    <field name="name">Opiniones</field>
+    <field name="res_model">teatro.opinion</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="teatro.promocion_action_window" >
+    <field name="name">Promociones</field>
+    <field name="res_model">teatro.promocion</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+<!-- Top menu item -->
+<menuitem name="TEATRO" id="teatro.root_menu"/>
+
+<!-- Menu categories -->
+<menuitem name="Salas" id="teatro.sala_menu" parent="teatro.root_menu" action="teatro.sala_action_window" />
+<menuitem name="Obras" id="teatro.obras_menu"  parent="teatro.root_menu" action="teatro.obra_action_window" />
+<menuitem name="Actores" id="teatro.actores_menu"  parent="teatro.root_menu" action="teatro.actor_action_window" />
+<menuitem name="Directores" id="teatro.directores_menu"  parent="teatro.root_menu" action="teatro.director_action_window" />
+<menuitem name="Opiniones" id="teatro.opiniones_menu"  parent="teatro.root_menu" action="teatro.opinion_action_window" />
+<menuitem name="Promociones" id="teatro.promociones_menu"  parent="teatro.root_menu" action="teatro.promocion_action_window" />
+
+</data>
+</odoo>
