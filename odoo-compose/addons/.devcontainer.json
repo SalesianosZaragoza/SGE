@@ -1,0 +1,14 @@
+{
+	"name" : "odoo-launch",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "odoo",
+	"extensions": [
+		"mstuttgart.odoo-snippets", 
+		"ms-python.python", 
+		"ms-python.vscode-pylance", 
+		"redhat.vscode-xml", 
+		"scapigliato.vsc-odoo-development",
+		"jigar-patel.OdooSnippets"],
+	"workspaceFolder": ".",
+	"forwardPorts": [8069]
+}
