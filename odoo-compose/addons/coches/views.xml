@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Examen de odoo" id="examen_menu_root"/>
+    <menuitem name="vehiculo" id="vehiculo_menu" parent="examen_menu_root" action="vehiculo_action"/>
+    <menuitem name="conductor" id="conductor_menu" parent="examen_menu_root" action="conductor_action"/>
+    <menuitem name="seguro" id="seguro_menu" parent="examen_menu_root" action="seguro_action"/>
+    <menuitem name="viaje" id="viaje_menu" parent="examen_menu_root" action="viaje_action"/>
+    <menuitem name="provincia" id="provincia_menu" parent="examen_menu_root" action="provincia_action"/>
+
+    <!--Tree y Forms vehiculo.py-->
+    <record model="ir.actions.act_window" id="vehiculo_action">
+        <field name="name">vehiculo</field>
+        <field name="res_model">examen.vehiculo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="vehiculo_tree_view" model="ir.ui.view">
+        <field name="name">vehiculo.tree</field>
+        <field name="model">examen.vehiculo</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de coches">
+                <field name="marca"/>
+                <field name="color"/>
+                <field name="cantidad_de_asientos"/>
+                <field name="conductor"/>
+                <field name="viajes"/>
+                <field name="seguro"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="vehiculo_form_view">
+        <field name="name">vehiculo.form</field>
+        <field name="model">examen.vehiculo</field>
+        <field name="arch" type="xml">
+            <form string="formulario de coches">
+                <sheet>
+                    <group>
+                        <field name="marca"/>
+                        <field name="color"/>
+                        <field name="cantidad_de_asientos"/>
+                        <field name="conductor"/>
+                        <field name="viajes"/>
+                        <field name="seguro"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--Tree y Forms conductor.py-->
+    <record model="ir.actions.act_window" id="conductor_action">
+        <field name="name">conductor</field>
+        <field name="res_model">examen.conductor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="conductor_tree_view" model="ir.ui.view">
+        <field name="name">conductor.tree</field>
+        <field name="model">examen.conductor</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de coches">
+                <field name="nombre"/>
+                <field name="dni"/>
+                <field name="vehiculo"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="conductor_form_view">
+        <field name="name">conductor.form</field>
+        <field name="model">examen.conductor</field>
+        <field name="arch" type="xml">
+            <form string="formulario de coches">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="dni"/>
+                        <field name="vehiculo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--Tree y Forms seguro.py-->
+    <record model="ir.actions.act_window" id="seguro_action">
+        <field name="name">seguro</field>
+        <field name="res_model">examen.seguro</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="seguro_tree_view" model="ir.ui.view">
+        <field name="name">seguro.tree</field>
+        <field name="model">examen.seguro</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de coches">
+                <field name="compania"/>
+                <field name="fecha_de_vencimiento"/>
+                <field name="vehiculo"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="seguro_form_view">
+        <field name="name">seguro.form</field>
+        <field name="model">examen.seguro</field>
+        <field name="arch" type="xml">
+            <form string="formulario de coches">
+                <sheet>
+                    <group>
+                        <field name="compania"/>
+                        <field name="fecha_de_vencimiento"/>
+                        <field name="vehiculo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--Tree y Forms viaje.py-->
+    <record model="ir.actions.act_window" id="viaje_action">
+        <field name="name">viaje</field>
+        <field name="res_model">examen.viaje</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="viaje_tree_view" model="ir.ui.view">
+        <field name="name">viaje.tree</field>
+        <field name="model">examen.viaje</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de viajes">
+                <field name="vehiculo"/>
+                <field name="provincia_origen"/>
+                <field name="provincia_destino"/>
+                <field name="fecha"/>
+                <field name="duracion_horas"/>
+                <field name="es_largo"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="viaje_form_view">
+        <field name="name">viaje.form</field>
+        <field name="model">examen.viaje</field>
+        <field name="arch" type="xml">
+            <form string="formulario de viajes">
+                <sheet>
+                    <group>
+                        <field name="vehiculo"/>
+                        <field name="provincia_origen"/>
+                        <field name="provincia_destino"/>
+                        <field name="fecha"/>
+                        <field name="duracion_horas"/>
+                        <field name="es_largo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--Tree y Forms provincia.py-->
+    <record model="ir.actions.act_window" id="provincia_action">
+        <field name="name">provincia</field>
+        <field name="res_model">examen.provincia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="provincia_tree_view" model="ir.ui.view">
+        <field name="name">provincia.tree</field>
+        <field name="model">examen.provincia</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de provincias">
+                <field name="nombre"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="conductor_form_view">
+        <field name="name">conductor.form</field>
+        <field name="model">examen.conductor</field>
+        <field name="arch" type="xml">
+            <form string="formulario de provincias">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
