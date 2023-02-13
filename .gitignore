@@ -10,7 +10,7 @@
 .settings/
 .metadata
 build.properties
-config
+
 
 # Apex Log as optional
 apex-scripts/log
@@ -20,7 +20,6 @@ salesforce.schema
 Referenced Packages
 bin/
 tmp/
-config/
 *.tmp
 *.bak
 local.properties
@@ -59,3 +58,5 @@ TestCache.xml
 TestsResultsCache.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/salesforce
+
+salesforce/Ahorcado/.sf
