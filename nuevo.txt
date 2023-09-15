@@ -1,5 +1,3 @@
 public static void main(){}
 
-public String cuentame(){}
-
-public satic void sistemasDeGestion(){}
+public String gestionEmpresarial(){}
