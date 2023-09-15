@@ -1,3 +1,5 @@
 public static void main(){}
 
 public String cuentame(){}
+
+public satic void sistemasDeGestion(){}
