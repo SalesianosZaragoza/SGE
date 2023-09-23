@@ -1,9 +1,8 @@
-version: '3.5'
-name: odoo_v16
+version: '3.4'
 services:
   web:
-    container_name: web
-    build: .
+    image: odoo:latest
+    platform: linux/amd64
     depends_on:
       - db
     ports:
@@ -12,27 +11,17 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/my-module
-    env_file:
-      - .env
-    environment:
-      - HOST=db
-      - USER=${POSTGRES_USER}
-      - PASSWORD=${POSTGRES_PASSWORD}
   db:
-    container_name: db
-    image: postgres:15
+    image: postgres:latest
     ports:
       - "5432:5432"
-    env_file:
-      - .env
     environment:
-      - POSTGRES_DB
-      - POSTGRES_PASSWORD
-      - POSTGRES_USER
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
 volumes:
   odoo-web-data:
   odoo-db-data:
-
