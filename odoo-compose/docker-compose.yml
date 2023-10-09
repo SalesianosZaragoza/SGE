@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   web:
-    image: odoo:15.0
+    image: odoo:16.0
     depends_on:
       - db
     ports:
@@ -11,7 +11,7 @@ services:
       - ./config:/etc/odoo
       - ./addons:/mnt/my-module
   db:
-    image: postgres:14
+    image: postgres:16
     ports:
       - "5432:5432"
     environment:
