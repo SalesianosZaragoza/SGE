@@ -1,5 +1,0 @@
-public static void main(){}
-
-
-public String tengoganasdeirmeacasa({}
-
